@@ -1,0 +1,13 @@
+_deploy/
+_site/
+_tmp/
+_export/
+.sass-cache
+*.swp
+.project
+*.bak
+.rvmrc
+TODO
+.awestruct
+Guardfile
+Gemfile.lock

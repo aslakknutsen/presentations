@@ -1,0 +1,436 @@
+---
+layout: dzslides
+---
+- page.html_class = "aspect-4-6"
+- page.stylesheets = ['/stylesheets/astrophysics.css']
+- page.javascripts = ['/javascripts/jquery-timer.js']
+
+:javascript
+	// $("#bug").animate({left: "+=500", top: "+=200"}, 2000);
+	$(document).ready(function() {
+		
+		function bug1() {
+			run("#bug")
+		}
+		function bug2() {
+			run("#bug2")
+		}
+		function run(id) {
+			var hoverDuration = 2000;
+
+			var newTop = Math.random() * 1000;
+			var newLeft = Math.random() * 1000;
+
+			$(id).css({
+				top: newTop,
+				left: newLeft
+			})
+			$(id).show();			
+			$(id).animate({
+				top: newTop * -1,
+				left: newLeft * -1
+			}, hoverDuration);
+			$(id).fadeOut();
+		}
+		$(this).everyTime(120000, "bug", bug1, 1000);
+		$(this).everyTime(120000, "bug", bug2, 1000);
+	});
+
+#bug.bug
+	%img{:src=> "/images/astrophysics/cartoon-bug2.png"}
+
+#bug2.bug
+	%img{:src=> "/images/astrophysics/cartoon-bug2.png"}
+
+%section
+	%embed{:src=>"/images/astrophysics/arquillian_icon_256px.svg", :type=>"image/svg+xml"}
+	%h1
+		.brand 
+			The 
+			%span.project Arquillian 
+			Universe
+	%blockquote a tour around the astrophysics lab
+	
+	.authors
+		%h3
+			@aslakknutsen
+			.company_brand
+				Red Hat
+		%h3
+			@ALRubinger
+			.company_brand
+				Red Hat
+
+%section
+	%h2 Testing...
+
+%section
+	%blockquote.quote 
+		The purpose of automated testing is to enable change. Verifying correctness is just a nice side effect.
+		.author - Jeremy Norris
+
+%section
+	%h2 
+		The Testing 
+		%span.project Gap
+
+	%h4
+		%span.incremental 
+			%span unit 
+			%span > integration 
+			%span > functional
+
+%section
+	%h1 
+		Core 
+		%span.project Principles
+
+%section.principle
+	%h1 1
+	%h2 Tests should be
+	%h3.project portable to any supported container
+%section.principle
+	%h1 2
+	%h2 Tests should be
+	%h3.project executable from both IDE and build tool
+%section.principle
+	%h1 3
+	%h2 The platform should
+	%h3.project extend/integrate existing test frameworks
+
+%section
+	%h1
+		.brand 
+			Arquillian 
+			%span.project Core
+	%blockquote so <em>you</em> can rule your code. not the bugs!
+
+%section.full
+	%h2.center Flexible
+
+%section.full
+	%h2.center Extendable
+
+
+%section
+	%h2 
+		%span.project Core
+		Extensions
+	%h4 Test > Container > Container Test
+
+%section
+	%h2 
+		%span.project Test
+		Extension
+	%h4 JUnit > TestNG > Spock > JBehave
+
+%section
+	%h2 
+		%span.project Container
+		Extension
+	%h4 JBoss AS > GlassFish > Jetty > Tomcat > WebSphere > WebLogic > Spring > Weld
+
+
+%section.core
+	%h2 
+		Container
+		%span.project Types
+	%h4 Embedded > Remote > Managed
+
+%section
+	%h1 Setup
+
+	.incremental
+		%h4 Maven, Gradle, Ant(+Ivy)
+
+%section
+	.code
+		.code_inner
+			=partial("astrophysics/arq_core_depmgm.md")
+
+			.incremental
+				=partial("astrophysics/arq_junit_dep.md")
+
+				=partial("astrophysics/arq_testng_dep.md")
+
+%section
+	%h1 
+		The 
+		%span.project basic 
+		Test Class
+
+%section
+	.code
+		.code_inner
+			=partial("astrophysics/basic_junit_test_class.md")
+
+			.overlay.incremental
+				=partial("astrophysics/arq_basic_junit_test_class.md")
+
+%section
+	%h1
+		.brand 
+			ShrinkWrap
+	%blockquote painless packaging in java
+
+%section
+	.code
+		.code_inner
+			=partial("astrophysics/shrinkwrap.md")
+
+%section
+	%h1
+		.brand 
+			ShrinkWrap
+			%span.project Resolver
+	%blockquote sane dependency resolution
+
+%section
+	.code
+		.code_inner
+			=partial("astrophysics/shrinkwrap_resolver.md")
+			=partial("astrophysics/shrinkwrap_resolver_import.md")
+
+%section
+	%h1
+		.brand 
+			ShrinkWrap
+			%span.project Descriptors
+	%blockquote painless configuration in java
+	
+%section
+	.code
+		.code_inner
+			=partial("astrophysics/shrinkwrap_descriptors.md")
+
+%section
+	.code
+		.code_inner
+			=partial("astrophysics/arq_basic_junit_test_class_full.md")
+
+%section
+	.code
+		.code_inner
+			=partial("astrophysics/setup_profiles.md")
+
+%section
+	%h2
+		.brand
+			How it
+			%span.project Works
+
+%section.step
+	.code
+		.code_inner
+			%img{:src=> '/images/lifecycle-steps/1_select_a_container.png'}
+
+%section.step
+	.code
+		.code_inner
+			%img{:src=> '/images/lifecycle-steps/2_start_container.png'}
+
+%section.step
+	.code
+		.code_inner
+			%img{:src=> '/images/lifecycle-steps/3_package_test_archive.png'}
+
+%section.step
+	.code
+		.code_inner
+			%img{:src=> '/images/lifecycle-steps/4_run_test_in_container.png'}
+
+%section.step
+	.code
+		.code_inner
+			%img{:src=> '/images/lifecycle-steps/5_test_result.png'}
+
+%section
+	.code
+		.code_inner
+			%img{:src=> '/images/lifecycle-steps/6_disconnect_container.png'}
+
+%section.persistence
+	%h1
+		.brand 
+			Arquillian
+			%span.project Persistence
+	%blockquote don't let the bugs hide in the boilerplate
+
+%section
+	%h1
+		.brand 
+			Arquillian
+			%span.project Drone
+	%blockquote functional mayham
+
+%section
+	%h1
+		.brand 
+			Arquillian
+			%span.project Warp
+	%blockquote the power of two
+
+%section.step
+	%img{:src=> '/images/warp_runmode.png'}
+
+%section
+	%h1
+		.brand 
+			Arquillian
+			%span.project Graphene
+	%blockquote HTML == API?
+
+%section
+	%h1
+		.brand 
+			Arquillian
+			%span.project Byteman
+	%blockquote make the impossible possible
+
+%section
+	%h1
+		.brand 
+			Arquillian
+			%span.project Jacoco
+	%blockquote code coverage
+
+%section
+	%h1
+		.brand 
+			Arquillian
+			%span.project JRebel
+	%blockquote speed up!
+
+%section
+	%h1 That's it?
+	%h4.incremental 
+		%span.brand.project far from it!
+
+%section
+	%h3
+		.brand
+			Arquillian
+			%span.project Android
+		%br
+		.brand
+			Arquillian
+			%span.project iOS
+		%br
+		.brand
+			Arquillian
+			%span.project RushEye
+		%br
+		.brand 
+			Arquillian
+			%span.project Spring
+		%br
+		.brand 
+			Arquillian
+			%span.project Performance
+		%br
+
+%section
+	%h1 ... and ...
+
+%section
+	%h3
+		.brand 
+			Arquillian
+			%span.project Transaction
+		%br
+		.brand
+			Arquillian
+			%span.project JSFUnit2
+		%br
+		.brand
+			Arquillian
+			%span.project Seam2
+		%br
+		.brand
+			Arquillian
+			%span.project Portal
+
+%section
+	%h1 ... and ...
+
+%section
+	%h3
+		.brand
+			Arquillian
+			%span.project Maven
+		%br
+		%div 
+			%span.project Forge Plugin
+			%span.brand Arquillian
+
+%section.related
+	%h1 
+		%span.project CON7622
+	%h2
+		.brand
+			Testing JSF Applications with Arquillian and Selenium
+
+	.bottom.center
+		.authors
+			Lincoln Baxter III - Brian Leathem 
+			
+		.location
+			Thursday, Oct 4, 2:00 PM - 3:00 PM
+			%br
+			Parc 55 - Cyril Magnin I
+
+		%h3
+			Arquillian 
+			%span.project Drone
+			|
+			%span.project Warp
+			|
+			%span.project Graphene
+	
+%section.related
+	%h1 
+		%span.project TUT5039
+	%h2
+		.brand
+			Cover Your Web and Mobile Applications with Integration Tests from Scratch
+
+	.bottom.center
+		.authors
+			Karel Piwko
+
+		.location
+			Thursday, Oct 4, 2:00 PM - 4:00 PM
+			%br
+			Hilton San Francisco - Continental Ballroom 1/2/3
+
+		%h3
+			Arquillian 
+			%span.project Drone 
+			| 
+			%span.project Android
+
+%section.related
+	%h1 
+		%span.project CON10659
+	%h2
+		.brand
+			Migrate from Spring to Java EE 6: Approaches and Techniques for Spring Developers
+
+	.bottom.center
+		.authors
+			Marius Bogoevici
+		
+		.location
+			Thursday, Oct 4, 3:30 PM - 4:30 PM
+			%br
+			Parc 55 - Cyril Magnin II/III
+
+		%h3
+			Arquillian 
+			%span.project Spring
+
+%section
+	%embed{:src=>"/images/astrophysics/arquillian_icon_256px.svg", :type=>"image/svg+xml"}
+	%h3 +arquillian
+	%h3 http://arquillian.org/
+	%h3 https://github.com/arquillian/

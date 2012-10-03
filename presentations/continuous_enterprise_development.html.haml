@@ -1,0 +1,115 @@
+---
+layout: dzslides
+---
+- page.html_class = "aspect-4-6"
+- page.stylesheets = ['/stylesheets/continuousdev.css']
+
+%section.title
+	%img{:src=>"/images/continuousdev/continuous_enterprise_development_in_java.jpg"}
+	.authors
+		%h3
+			Andrew Lee
+			%br
+			Rubinger
+			.company_brand
+				Red Hat
+			.personal_brand @ALRubinger
+		%h3
+			%br
+			Aslak
+			%br
+			Knutsen
+			.company_brand
+				Red Hat
+			.personal_brand @aslakknutsen
+
+%section
+	%h2 Testing is...
+	%h4
+		%span.incremental
+			%span too hard
+			%span > too slow
+			%span > time consuming
+			%span > no fun
+
+%section
+	%blockquote.quote 
+		The purpose of automated testing is to enable change. Verifying correctness is just a nice side effect.
+		.author - Jeremy Norris
+
+%section
+	%h2 
+		Testing is
+		%span.project Development
+
+%section
+	%h2 
+		Types of
+		%span.project Testing
+
+	%h4
+		%span.incremental 
+			%span acceptance 
+			%span > compatibility
+			%span > functional
+			%span > black box 
+			%span > white box
+			%span > gray box
+			%span > regression
+			%span > smoke
+			%span > load / stress / performance
+			
+%section
+	%h1 
+		The
+		%span.project Unit
+
+%section
+	%h1 
+		The
+		%span.project Integration
+
+%section
+	%h1 
+		%span.project Continuous
+		Integration
+	%h4
+		%span.incremental
+			%span authoritative source repository
+			%span > comprehensive test suite
+			%span > automated build system
+			%span > automated deployment
+
+%section
+	%h1 
+		%span.project Continuous
+		Development
+
+%section
+	%h1 
+		%span.project Our 
+		Philosophy
+
+%section.principle
+	%h1 1
+	%h2 Tests should be
+	%h3.project portable to any supported container
+%section.principle
+	%h1 2
+	%h2 Tests should be
+	%h3.project executable from both IDE and build tool
+%section.principle
+	%h1 3
+	%h2 The platform should
+	%h3.project extend/integrate existing test frameworks
+
+%section.info
+	%img{:src=>"/images/continuousdev/continuous_enterprise_development_in_java.jpg"}
+	%h3 @ContinuousDev
+	%h3 http://continuousdev.org
+
+%section.info
+	%embed{:src=>"/images/astrophysics/arquillian_icon_256px.svg", :type=>"image/svg+xml"}
+	%h3 +arquillian
+	%h3 http://arquillian.org/
+	%h3 https://github.com/arquillian/	

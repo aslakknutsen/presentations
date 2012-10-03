@@ -1,0 +1,10 @@
+    <profile>
+        <id>arq-jbossas-remote-7</id>
+        <dependencies>
+            <dependency>
+                <groupId>org.jboss.as</groupId>
+                <artifactId>jboss-as-arquillian-container-remote</artifactId>
+                <version>${version.jbossas}</version>
+            </dependency>
+        </dependencies>
+    </profile>

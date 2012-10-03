@@ -1,0 +1,29 @@
+!!!5
+- page.html_class = "" if page.html_class.nil?
+%html{:class=>page.html_class}
+  %head
+    %meta{ :charset=>'utf-8' }
+    %title= (page.title ? [page.title, page.site_title ? page.site_title : site.title] : [site.title, site.tagline]) * ' &#183; '
+    %meta{ :name=>'viewport', :content=>'width=device-width, initial-scale=1.0' }
+    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>"#{site.base_url}/stylesheets/screen.css" }
+    - if page.stylesheets
+      - page.stylesheets.each do |stylesheet|
+        %link(rel='stylesheet' href=stylesheet)
+    %script{ :type=>'text/javascript', :src=>'//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js' }
+    - if page.top_javascripts
+      - page.top_javascripts.each do |javascript|
+        %script{:src=>javascript}
+
+    /[if lt IE 9]
+      %script{ :type=>'text/javascript', :src=>'//html5shim.googlecode.com/svn/trunk/html5.js' }
+  %body.view
+    ~ content
+
+
+    -#%script{ :type=>'text/javascript', :src=>'/javascripts/prettify.js' }
+    - if page.javascripts
+      - page.javascripts.each do |javascript|
+        %script{:src=>javascript, :type=>"text/javascript"}
+
+    -#%script{:type=>"text/javascript"}
+      //$(function() { prettify(); });

@@ -1,0 +1,25 @@
+---
+layout: base
+---
+- if page.javascripts.nil? 
+	- page.javascripts = ['/javascripts/dzslides.js', '/javascripts/prettify.js']
+- if !page.javascripts.nil?
+	- page.javascripts << '/javascripts/dzslides.js' << '/javascripts/prettify.js'
+- if page.stylesheets.nil?
+	- page.stylesheets = ['/stylesheets/dzslides.css']
+- if !page.stylesheets.nil?
+	- page.stylesheets << '/stylesheets/dzslides.css'
+
+~ content
+
+#progress-bar
+
+%script{:type=>"text/javascript"}
+	:plain
+		$(window).load(function() {
+			list = _$$('pre>code')
+			for(i = 0; i < list.length; i++) {
+				list[i].classList.add('prettify');
+			}
+			prettify();
+		})
