@@ -1,0 +1,118 @@
+---
+layout: dzslides
+---
+- page.html_class = "aspect-16-10"
+- page.stylesheets = ['/stylesheets/devoxx_bof.css']
+- page.javascripts = ['/javascripts/jquery-timer.js']
+
+:javascript
+	var interval = 2000;
+	// $("#bug").animate({left: "+=500", top: "+=200"}, 2000);
+	$(document).ready(function() {
+		
+		function bug1() {
+			run("#bug")
+		}
+		function bug2() {
+			run("#bug2")
+		}
+		function run(id) {
+			var hoverDuration = 5000;
+
+			var newTop = Math.random() * 1000;
+			var newLeft = Math.random() * 1000;
+
+			//alert("top: " + newTop + "->" + (newTop*-1) + "\nleft: " + newLeft + "->" + (newLeft*-1))
+			
+			$(id).css({
+				top: newTop,
+				left: newLeft
+			})
+			$(id).show();			
+			$(id).animate({
+				top: newTop * -1,
+				left: newLeft * -1
+			}, hoverDuration);
+			$(id).fadeOut();
+		}
+		$(this).everyTime(interval, "bug", bug1, 1000);
+		//$(this).everyTime(interval, "bug", bug2, 1000);
+	});
+
+#bug.bug
+	%img{:src=> "/images/devoxx_bof/deathstar.png"}
+
+#bug2.bug
+	%img{:src=> "/images/devoxx_bof/deathstar.png"}
+
+%section.title
+	%img{:src=>"/images/devoxx_bof/Death_Star_2_by_nabbal.jpg", :class=>"bg"}
+	%h1
+		.brand
+			The bugs are building another
+	%h2 
+		%span.project Death Star
+
+%section
+	.code
+		.code_inner
+			.center
+				%h3 Unit tests don't find bugs!
+
+%section
+	.code
+		.code_inner
+			.center
+				%h3 Fire all manual testers?
+
+%section
+	.code
+		.code_inner
+			.center
+				%h3 Are any bugs benign?
+
+%section
+	.code
+		.code_inner
+			.center
+				%h3 Can we allow imperfections?
+%section
+	.code
+		.code_inner
+			.center
+				%img{:src=> "/images/devoxx_bof/dilbert-minivan.gif"}
+
+%section
+	.code
+		.code_inner
+			.center
+				%h3 Stop mocking, starting testing
+
+%section
+	.code
+		.code_inner
+			.center
+				%h3 Are the monkeys eating your test specifications?
+
+%section
+	.code
+		.code_inner
+			.center
+				%h3 Monkey your way to 100% coverage
+
+%section
+	.code
+		.code_inner
+			.center
+				%h3 Who test the tests?
+%section
+	.code
+		.code_inner
+			.center
+				%h3 Who told you what to program and when are you done?
+
+%section
+	.code
+		.code_inner
+			.center
+				%h3 What's in your bat belt?
