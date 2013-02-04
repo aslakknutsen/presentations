@@ -1,0 +1,371 @@
+---
+layout: dzslides
+---
+- page.html_class = "aspect-4-6"
+- page.stylesheets = ['/stylesheets/astrophysics.css']
+- page.javascripts = ['/javascripts/jquery-timer.js']
+
+:javascript
+	// $("#bug").animate({left: "+=500", top: "+=200"}, 2000);
+	$(document).ready(function() {
+		
+		function bug1() {
+			run("#bug")
+		}
+		function bug2() {
+			run("#bug2")
+		}
+		function run(id) {
+			var hoverDuration = 2000;
+
+			var newTop = Math.random() * 1000;
+			var newLeft = Math.random() * 1000;
+
+			$(id).css({
+				top: newTop,
+				left: newLeft
+			})
+			$(id).show();			
+			$(id).animate({
+				top: newTop * -1,
+				left: newLeft * -1
+			}, hoverDuration);
+			$(id).fadeOut();
+		}
+		$(this).everyTime(120000, "bug", bug1, 1000);
+		$(this).everyTime(120000, "bug", bug2, 1000);
+	});
+
+#bug.bug
+	%img{:src=> "/images/astrophysics/cartoon-bug2.png"}
+
+#bug2.bug
+	%img{:src=> "/images/astrophysics/cartoon-bug2.png"}
+
+%section
+	%embed{:src=>"/images/astrophysics/arquillian_icon_256px.svg", :type=>"image/svg+xml"}
+	%h1
+		.brand 
+			The 
+			%span.project Arquillian 
+			Universe
+	%blockquote a tour around the astrophysics lab
+	
+	.authors
+		%h3
+			@aslakknutsen
+			.company_brand
+				Red Hat
+
+%section
+	%h2 Testing...
+	%h4
+		%span.incremental
+			%span too hard
+			%span > too slow
+			%span > no time
+			%span > no fun
+
+%section
+	%blockquote.quote 
+		The purpose of automated testing is to enable change. Verifying correctness is just a nice side effect.
+		.author - Jeremy Norris
+
+%section
+	%h2 
+		The Testing 
+		%span.project Gap
+
+	%h4
+		%span.incremental 
+			%span unit 
+			%span > integration 
+			%span > functional
+
+%section
+	%h1 
+		%span.project Core 
+		Principles
+
+%section.principle
+	%h1 1
+	%h2 Tests should be
+	%h3.project portable to any supported container
+%section.principle
+	%h1 2
+	%h2 Tests should be
+	%h3.project executable from both IDE and build tool
+%section.principle
+	%h1 3
+	%h2 The platform should
+	%h3.project extend/integrate existing test frameworks
+
+%section
+	%h1
+		.brand 
+			Arquillian 
+			%span.project Core
+	%blockquote so <em>you</em> can rule your code. not the bugs!
+
+%section.full
+	%h2.center Flexible
+
+%section.full
+	%h2.center Extendable
+
+%section
+	%h2 
+		%span.project Test
+		Extension
+	%h4 SPI for test runners
+
+%section
+	%h2 
+		%span.project Container
+		Extension
+	%h4 SPI for runtime providers
+
+%section
+	%h1 Setup
+
+	%h4 Maven, Gradle, Ant(+Ivy)
+
+%section
+	.code
+		.code_inner
+			=partial("astrophysics/arq_core_depmgm.md")
+
+			.incremental
+				=partial("astrophysics/arq_junit_dep.md")
+
+%section
+	%h1 
+		The 
+		%span.project basic 
+		Test Class
+
+%section
+	.code
+		.code_inner
+			=partial("astrophysics/basic_junit_test_class.md")
+
+			.overlay.incremental
+				=partial("astrophysics/arq_basic_junit_test_class.md")
+
+%section
+	%h1
+		.brand 
+			ShrinkWrap
+	%h4
+		%span.project Resolver
+		|
+		%span.project Descriptor
+
+%section
+	.code
+		.code_inner
+			=partial("astrophysics/shrinkwrap.md")
+%section
+	.code
+		.code_inner
+			=partial("astrophysics/shrinkwrap_resolver.md")
+
+%section
+	.code
+		.code_inner
+			=partial("astrophysics/shrinkwrap_descriptors.md")
+
+%section
+	.code
+		.code_inner
+			=partial("astrophysics/arq_basic_junit_test_class_full.md")
+
+%section
+	.code
+		.code_inner
+			=partial("astrophysics/setup_profiles.md")
+
+%section
+	%h2
+		.brand
+			How it
+			%span.project Works
+
+%section.step
+	.code
+		.code_inner
+			%img{:src=> '/images/lifecycle-steps/1_select_a_container.png'}
+
+%section.step
+	.code
+		.code_inner
+			%img{:src=> '/images/lifecycle-steps/2_start_container.png'}
+
+%section.step
+	.code
+		.code_inner
+			%img{:src=> '/images/lifecycle-steps/3_package_test_archive.png'}
+
+%section.step
+	.code
+		.code_inner
+			%img{:src=> '/images/lifecycle-steps/4_run_test_in_container.png'}
+
+%section.step
+	.code
+		.code_inner
+			%img{:src=> '/images/lifecycle-steps/5_test_result.png'}
+
+%section
+	.code
+		.code_inner
+			%img{:src=> '/images/lifecycle-steps/6_disconnect_container.png'}
+
+%section
+	%h1
+		.brand 
+			Arquillian:
+			%span.project Demo
+	%h4
+		.brand 
+			%span.project Persistence
+			|
+			%span.project Drone
+			|
+			%span.project Warp
+			|
+			%span.project Graphene
+		
+
+%section
+	%h1 ...Universe?
+	%h4.incremental 
+		%span.brand.project there is more!
+
+%section
+	%h1 
+		.brand 
+			Arquillian: 
+			%span.project Web / JavaEE
+	%h4
+		.brand
+			%span.project Warp
+			|
+			%span.project Drone
+			|
+			%span.project Graphene
+			|
+			%span.project Persistence
+			|
+			%span.project Transactions
+			|
+			%span.project JSFUnit2
+			|
+			%span.project Seam2
+			|
+			%span.project Portal
+			|
+			%span.project REST
+
+%section
+	%h1
+		.brand 
+			Arquillian:
+			%span.project Mobile
+	%h4
+		.brand
+			%span.project Android
+			|
+			%span.project iOS
+
+%section
+	%h1
+		.brand 
+			Arquillian:
+			%span.project Dev / Tooling
+	%h4
+		.brand
+			%span.project Maven
+			|
+			%span.project Forge
+			|
+			%span.project JBoss Tools
+			|
+			%span.project JRebel
+			|
+			%span.project Jacoco
+
+%section
+	%h1
+		.brand 
+			Arquillian:
+			%span.project Misc
+	%h4
+		.brand
+			%span.project Byteman
+			|
+			%span.project Spring
+			|
+			%span.project RushEye
+			|
+			%span.project Performance
+
+%section
+	%h1
+		.brand 
+			Arquillian:
+			%span.project TestRunners
+	%h4
+		.brand
+			%span.project JUnit
+			|
+			%span.project TestNG
+			|
+			%span.project Spock
+			|
+			%span.project Cucumber
+
+%section
+	%h1
+		.brand 
+			Arquillian:
+			%span.project Containers
+	%h4
+		.brand
+			%span.project JBoss AS
+			|
+			%span.project GlassFish
+			|
+			%span.project WebLogic
+			|
+			%span.project WebSphere
+			|
+			%span.project TomEE
+			|
+			%span.project Jetty 
+			|
+			%span.project Tomcat
+			|
+			%span.project Resin
+			|
+			%span.project Weld
+			|
+			%span.project OpenEJB
+			|
+			%span.project OpenWebBeans
+			|
+			%span.project Spring
+			|
+			%span.project OSGi
+			|
+			%span.project OpenShift
+			|
+			%span.project CloudBees
+
+
+%section
+	%embed{:src=>"/images/astrophysics/arquillian_icon_256px.svg", :type=>"image/svg+xml"}
+	%h3 +arquillian
+	%h3 http://arquillian.org/
+	%h3 https://github.com/arquillian/
+	%h3 #jbosstesting @ freenode.net
