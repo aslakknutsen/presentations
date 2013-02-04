@@ -26,9 +26,26 @@ html {
   }
 }
 
+.code {
+	width:100%;
+	height:100%;
+	display:table;
+}
+
+.code_inner {
+	vertical-align:middle;
+	display:table-cell;
+}
+
+.demo_url {
+	font-size:1.7em;
+	text-decoration: underline;
+	text-align:center;
+}
+
 .title {
 	.authors {
-		margin-top: 20%;
+		margin-top: 7%;
 	}
 	
 	img {
@@ -38,6 +55,11 @@ html {
 	  z-index:-1;
 	  height: 500px;
 	  width: 381px;
+	}
+	
+	.links {
+		margin-left: 7%;
+		font-size: 0.6em;
 	}
 }
 
