@@ -1,0 +1,274 @@
+---
+layout: dzslides
+---
+- page.html_class = "aspect-4-6"
+- page.stylesheets = ['/stylesheets/zoo.css']
+- page.javascripts = ['/javascripts/jquery-timer.js']
+
+%section
+	%embed{:src=>"/images/astrophysics/arquillian_icon_256px.svg", :type=>"image/svg+xml"}
+	%h1
+		.brand 
+			%span.project Arquillian 
+			Universe
+	%blockquote taming the beasts
+	
+	.authors
+		%h3
+			@mojavelinux
+		%h3
+			@aslakknutsen
+		%h3
+			@lfryc
+%section
+	%h2 Testing...
+
+%section
+	%blockquote.quote 
+		The purpose of automated testing is to enable change. Verifying correctness is just a nice side effect.
+		.author - Jeremy Norris
+
+%section
+	%h2 
+		The Testing 
+		%span.project Gap
+
+	%h4
+		%span.incremental 
+			%span unit 
+			%span ~ integration 
+			%span ~ functional
+
+%section
+	%h1.down.left Unit
+
+	%img.background.right{:src=>"/images/zoo/unit-level.jpg"}
+
+%section
+	%h1.down.left Integration
+
+	%img.background.right{:src=>"/images/zoo/integration-level.jpg"}
+
+%section
+	%h1 
+		Core 
+		%span.project Principles
+
+%section.principle
+	%h1 1
+	%h2 Tests should be
+	%h3.project portable to any supported container
+%section.principle
+	%h1 2
+	%h2 Tests should be
+	%h3.project executable from both IDE and build tool
+%section.principle
+	%h1 3
+	%h2 The platform should
+	%h3.project extend/integrate existing test frameworks
+
+%section
+	%h1
+		.brand 
+			Arquillian 
+			%span.project Core
+	%blockquote so <em>you</em> can rule your code. not the bugs!
+
+%section
+	%h2.down.right Flexible
+
+	%img.flexible.background{:src=>"/images/zoo/flexible.jpg"}
+
+%section
+	%h2.down.left Extendable
+
+	%img.extendable.background{:src=>"/images/zoo/extendable.jpg"}
+
+%section
+	%h2 
+		%span.project Core
+		Extensions
+	%h4 Test ~ Container ~ Container Test
+
+%section
+	%h2 
+		%span.project Test
+		Extension
+	%h4 JUnit ~ TestNG ~ Spock ~ JBehave ~ Thucydides
+
+%section
+	%h2 
+		%span.project Container
+		Extension
+	%h4 JBoss AS ~ GlassFish ~ Jetty ~ Tomcat ~ WebSphere ~ WebLogic ~ Spring ~ Weld
+
+%section
+	%h2 
+		%span.project Container Test
+		Extension
+	%h4 Binds the two :: In container testing
+
+%section
+	%h1 
+		The 
+		%span.project basic 
+		Test Class
+
+%section
+	.code
+		.code_inner
+			=partial("astrophysics/basic_junit_test_class.md")
+
+			.overlay.incremental
+				=partial("astrophysics/arq_basic_junit_test_class.md")
+
+%section
+	%h1
+		.brand 
+			ShrinkWrap
+	%h4 Deployment > Resolver > Descriptors
+
+%section
+	.code
+		.code_inner
+			=partial("astrophysics/arq_basic_junit_test_class_full.md")
+
+%section
+	.code
+		.code_inner
+			=partial("astrophysics/setup_profiles.md")
+
+%section
+	%h2
+		.brand
+			Demo
+
+%section
+	%h2
+		.brand
+			How does that
+			%span.project Work?
+
+%section.step
+	.code
+		.code_inner
+			%img{:src=> '/images/lifecycle-steps/1_select_a_container.png'}
+
+%section.step
+	.code
+		.code_inner
+			%img{:src=> '/images/lifecycle-steps/2_start_container_single.png'}
+
+%section.step
+	.code
+		.code_inner
+			%img{:src=> '/images/lifecycle-steps/3_package_test_archive.png'}
+
+%section.step
+	.code
+		.code_inner
+			%img{:src=> '/images/lifecycle-steps/4_run_test_in_container.png'}
+
+%section.step
+	.code
+		.code_inner
+			%img{:src=> '/images/lifecycle-steps/5_test_result.png'}
+
+%section
+	.code
+		.code_inner
+			%img{:src=> '/images/lifecycle-steps/6_disconnect_container.png'}
+
+%section
+	%h1
+		.brand 
+			Arquillian
+			%span.project Enrichers
+	%blockquote getting a grip		
+
+%section
+	%h1
+		.brand 
+			Arquillian
+			%span.project Drone
+	%blockquote functional mayham
+
+%section.step
+	%img{:src=> '/images/client_runmode.png'}
+
+		%br
+
+%section
+	%h1
+		.brand 
+			Arquillian
+			%span.project Warp
+	%blockquote living in both worlds
+
+%section.step
+	%img{:src=> '/images/warp_runmode.png'}
+
+		%br
+
+
+%section.persistence
+	%h1
+		.brand 
+			Arquillian
+			%span.project Persistence
+	%blockquote don't let the bugs hide in the boilerplate
+
+%section.step
+	%img{:src=> '/images/incontainer_runmode.png'}
+
+		%br
+
+%section
+	%h2
+		.brand
+			Demo
+
+
+%section
+	%img{:src=>"/images/zoo/integrations.png", :width => "100%", :height => "100%"}
+
+
+%section
+	%embed{:src=>"/images/astrophysics/arquillian_icon_256px.svg", :type=>"image/svg+xml"}
+	%h3 +arquillian
+	%h3 http://arquillian.org/
+	%h3 https://github.com/arquillian/
+
+%section
+	%h1 
+		.beand
+			J
+			%span.project.brand Hack
+			Fest
+			
+	.bottom.center
+		%br
+		.location
+			Saturday, 12:30 - 18:30
+			%br
+			%br
+			Sunday, 09:00 - 18:30
+			%br
+			%br 
+			Meeting room B431
+			%br
+			Pavilion B, 4th floor
+			%br
+			%br 
+			Monday, 09:00 - 17:00
+			%br
+			%br
+			Red Hat
+
+%section
+
+	%h2 Credits
+
+	.author http://www.flickr.com/photos/horiavarlan/
+	.author http://www.flickr.com/photos/heroiclife/
+	.author http://www.knowyourmobile.com/blog/1689315/samsung_confirms_flexibleoled_displays_for_galaxy_range_in_2013.html
