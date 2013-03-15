@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <meta charset="utf8">
-<title>DZSlides On-Stage Viewer</title>
+<title>DZSlides</title>
 
 <div id="present">
   <iframe></iframe>
@@ -15,13 +15,11 @@
 <div id="nextslideidx">?</div>
 
 <div id="notes">
-  <details id="content" open="true">
-    <summary>Notes</summary>
-  </details>
+  <p id="content"></p>
 </div>
 
 <div id="slidecount">?</div>
-<button id="popup-button" onclick="Dz.popup()">Launch</button>
+<button id="popup-button" onclick="Dz.popup()">Pop-up</button>
 
 <div id="time">
   <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
@@ -65,32 +63,10 @@
     font-size: 30px;
     height: 226px;
     left: 0;
-    padding: 0 240px 0 20px;
+    padding: 0 250px 0 20px;
     position: absolute;
     right: 0;
-
-    overflow-y: auto;
-  }
-
-  #content {
-    margin: 1em 0;
-  }
-
-  #content > summary {
-    display: none;
-  }
-
-  details {
-    display: block;
-  }
-
-  details details {
-    font-size: 14px;
-    margin-top: 1em;
-  }
-
-  details details p {
-    white-space: pre-line;
+    overflow: auto;
   }
 
   #time {
@@ -102,7 +78,7 @@
     font-weight: bold;
     height: 52px;
     line-height: 52px;
-    right: 20px;
+    right: 30px;
     position: absolute;
     text-align: center;
     width: 200px;
@@ -155,7 +131,7 @@
     border-top: 4px solid #555;
     bottom: 174px;
     width: 200px;
-    right: 20px;
+    right: 30px;
   }
 
   #popup-button {
@@ -169,7 +145,7 @@
     font-size: 30px;
     font-weight: bold;
     position: absolute;
-    right: 20px;
+    right: 30px;
     width: 200px;
     z-index: 10;
   }
@@ -180,8 +156,7 @@
     views: {},
     notes: null,
     url: null,
-    idx: 1,
-    aspect: [4,3]
+    idx: 1
   };
   
   Dz.init = function() {
@@ -200,36 +175,28 @@
     if ( aEvent.keyCode == 37 // left arrow
       || aEvent.keyCode == 38 // up arrow
       || aEvent.keyCode == 33 // page up
-      || aEvent.keyCode == 8 // backspace
-      || aEvent.keyCode == 75 // k
     ) {
       aEvent.preventDefault();
       this.back();
     }
-    else if ( aEvent.keyCode == 39 // right arrow
+    if ( aEvent.keyCode == 39 // right arrow
       || aEvent.keyCode == 40 // down arrow
       || aEvent.keyCode == 34 // page down
-      || aEvent.keyCode == 32 // space
-      || aEvent.keyCode == 74 // j
     ) {
       aEvent.preventDefault();
       this.forward();
     }
-    else if (aEvent.keyCode == 35) { // end
+    if (aEvent.keyCode == 35) { // end
       aEvent.preventDefault();
       this.goEnd();
     }
-    else if (aEvent.keyCode == 36) { // home
+    if (aEvent.keyCode == 36) { // home
       aEvent.preventDefault();
       this.goStart();
     }
-    else if (aEvent.keyCode == 80) { // p
+    if (aEvent.keyCode == 32) { // space
       aEvent.preventDefault();
       this.toggleContent();
-    }
-    else if (aEvent.keyCode == 79) { // o
-      aEvent.preventDefault();
-      this.popup();
     }
   }
   
@@ -239,10 +206,9 @@
     if (argv[0] === "CURSOR" && argc === 2) {
       if (aEvent.source === this.views.present) {
         var cursor = argv[1].split(".");
+        this.postMsg(this.views.present, "GET_NOTES");
         this.idx = ~~cursor[0];
         this.step = ~~cursor[1];
-        if (this.step == 0)
-          this.postMsg(this.views.present, "GET_NOTES");
         $("#slideidx").innerHTML = argv[1];
         this.postMsg(this.views.future, "SET_CURSOR", this.idx + "." + (this.step + 1));
         if (this.views.remote)
@@ -253,11 +219,9 @@
     }
     if (aEvent.source === this.views.present) {
       if (argv[0] === "NOTES" && argc === 2)
-        $("#notes > #content").innerHTML = this.notes = "<summary>Notes</summary>" + argv[1];
+        $("#notes > #content").innerHTML = this.notes = argv[1];
       if (argv[0] === "REGISTERED" && argc === 3)
         $("#slidecount").innerHTML = argv[2];
-      if (argv[0] === "ASPECT" && argc === 2)
-        this.aspect = argv[1].split(':').map(function(a) { return parseInt(a) });
     }
   }
   
@@ -290,7 +254,6 @@
       if (Dz.views.present && Dz.views.future) {
         Dz.postMsg(Dz.views.present, "REGISTER");
         Dz.postMsg(Dz.views.future, "REGISTER");
-        Dz.postMsg(Dz.views.present, "GET_ASPECT");
       }
     }
   }
@@ -325,8 +288,7 @@
   }
 
   Dz.popup = function() {
-    var h = ~~(800 * (this.aspect[1] / this.aspect[0]))
-    this.views.remote = window.open(this.url + "#" + this.idx, 'slides', 'width=800,height=' + h + ',personalbar=0,toolbar=0,scrollbars=1,resizable=1');
+    this.views.remote = window.open(this.url + "#" + this.idx, 'slides', 'width=800,height=600,personalbar=0,toolbar=0,scrollbars=1,resizable=1');
   }
   
   Dz.postMsg = function(aWin, aMsg) { // [arg0, [arg1...]]
