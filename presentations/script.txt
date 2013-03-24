@@ -1,0 +1,29 @@
+= Arquillian Universe Tour Script
+Dan Allen
+
+Prepared to be beamed up for a tour around the Arquillian Universe
+I'm Dan Allen and this is Aslak Knutsen and we'll be your tour guides on this journey.
+
+We're going to be taking the rather _dry_ and _boring_ topic of testing
+and make it interesting
+by involving aliens, drones, hi-tech materials and anything else we can find in the known universe.
+(needs work) Perhaps the more exciting part is that we'll use these things to get a quick feedback loop for development
+
+Start off with a couple of core principles that have helped shape the Arquillian Universe.
+
+. Tests should be portable across multiple runtimes and/or target environments (servers, browsers, databases, etc)
+. Tests should work in your IDE, where you spend your day-to-day life, and your build tools, which run in CI environments
+. The Arquillian Universe should not reinvent the whole wheel, rather use what's out there, but make it more consumable and integrated
+
+Move testing forward.
+
+Integration platform for the JVM
+Not limited to the Java language
+JRuby, Groovy, Scala, which can reuse the Arquillian Core
+
+Flexible
+Extendable
+Ready for today.
+Prepared for the future.
+
+
