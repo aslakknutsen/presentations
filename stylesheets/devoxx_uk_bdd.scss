@@ -1,0 +1,398 @@
+$_slide-background-color: rgba(128, 128, 128, 0.2);
+$slide-background-color: #ededed;
+$project-color: #F7490F;
+$brand-color: #41245A;
+$company-color: #FF0000;
+
+html {
+  background-color: $slide-background-color; 
+  body {
+    background-color: $slide-background-color; 
+    counter-reset: slideidx;
+
+    section {
+      padding-left:10px;
+      padding-right:10px;
+    
+      &.core {
+        li {
+          display: block;
+          text-align: right;
+          color: $brand-color;
+          font-weight: bold;
+          line-height: 30px;
+        }    
+      }
+    }
+  }
+}
+
+.code pre, .code code {
+  white-space: pre-wrap !important;
+}
+
+.bug {
+  position: absolute;
+  display:none;
+  xtop:50 px;
+  z-index:10;
+}
+
+.code {
+  width:100%;
+  height:100%;
+  display:table;
+}
+
+.code_inner {
+  vertical-align:middle;
+  display:table-cell;
+}
+
+.code_inner img {
+  width: 24em;
+  height: 14em;
+  
+}
+
+.step .code_inner {
+  text-align:center;
+}
+
+.step {
+
+  img {
+    xpadding-top: 5%;
+  }
+}
+
+ul {
+  li {
+    display: inline;
+    list-style: none;
+    xmargin-top:30px;
+    xmargin-left:30px;
+    xtext-align: right;
+    
+  }
+}
+.right {
+  text-align:right;
+}
+
+.brand {
+  color: $brand-color;
+}
+.company_brand {
+  color: $company-color; 
+  font-size: 0.7em;
+}
+
+.project {
+  color: $project-color;
+  font-weight:bold;
+}
+
+.authors {
+  h3 {
+    margin: 5% 0px 0px 0px;
+  }
+}
+
+.principle {
+  h1 {
+    margin-top: 20%;
+    font-size: 500px;
+    float:right;
+  }
+  h2 {
+    margin-top: 20%;
+    font-size: 70px;
+    text-align: left;
+  }
+  h3 {
+    margin: 5% 0px 0px 0px;
+    font-size: 50px;
+    text-align: right;
+  }
+}
+
+.full {
+  h2 {
+    font-size:4.5em;
+    letter-spacing: 0.2em;
+  }
+}
+
+.center {
+  text-align:center;
+}
+
+.related {
+  h1 {
+    margin-top: 5%;
+    font-size:120%;
+  }
+  h2 {
+    margin-top: 2%;
+    line-height: 0.9em;
+    font-size:2.3em;
+  }
+  .bottom {
+    font-size: 1.3em;
+    line-height:1em;
+    position: absolute;
+    width:100%;
+    top: 60%;
+    z-index:-1;
+  }
+  h3 {
+    margin: 20px 0 0 0;
+  }
+  
+  .authors {
+    font-size: 0.8em;
+  }
+  .location {
+    font-size: 0.8em;
+  }
+}
+
+body, .view section { xbackground-color: white; xborder-radius: 12px }
+/* A section is a slide. It's size is 800x600, and this will never change */
+section, .view head > title {
+    /* The font from Google */
+  font-family: 'Oswald', arial, serif;
+  font-size: 30px;
+}
+
+.view section:after {
+  counter-increment: slideidx;
+  content: counter(slideidx, decimal-leading-zero);
+  position: absolute; bottom: -80px; right: 100px;
+  color: white;
+}
+
+.view head > title {
+  color: white;
+  text-align: center;
+  margin: 1em 0 1em 0;
+}
+
+pre {
+  margin-top: 20px;
+  
+  code {
+    line-height: 10px;
+    font-size: 90%;
+  }
+}
+
+.overlay {
+  position: absolute;
+  margin-top: -465px;
+  background: transparent;
+  pre {
+  background: transparent;
+    border-bottom: 0px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+  }
+  code {
+  background: transparent;
+    border: 0px;
+  }
+
+}
+img {
+  &.background {
+    position: absolute;
+    
+    &.extendable {
+      left: 30%;
+      top: -30%;
+      z-index:-1;
+      height: 800px;
+    }
+    &.flexible {
+      left: -25%;
+      top: 0%;
+      z-index:-1;
+      height: 600px;
+    }    
+
+    &.right {
+      left: 35%;
+      top: -30%;
+      z-index:-1;
+      height: 800px;
+    }
+    &.left {
+      left: -25%;
+      top: 0%;
+      z-index:-1;
+      height: 600px;
+    }    
+  }
+}
+
+
+embed {
+  position: absolute;
+  left: 35%;
+  top: -10%;
+  z-index:-1;
+  height: 701px;
+  width: 701px;
+  opacity:0.3;
+}
+
+h1, h2 {
+  margin-top: 20%;
+  text-align: left;
+  font-size: 80px;
+
+  &.down {
+    -webkit-transform: rotate(90deg); 
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+
+    &.right {
+      margin-left: 550px;
+      margin-top: 130px;
+    }
+    &.left {
+      margin-right: 500px;
+      margin-top: 200px;
+    }
+  }
+}
+h3 {
+  margin: 100px 0 50px 100px;
+}
+
+h4 {
+  text-align:right;
+  margin-top: 50px;
+  line-height: 1em;
+}
+ul {
+    margin: 50px 200px;
+}
+
+p {
+  margin: 75px;
+  font-size: 50px;
+}
+
+blockquote {
+  &.quote {
+    margin-top: 100px;
+    /*margin-left: 80px;*/
+    padding-left: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    color: $brand-color;
+    border-left: 5px solid #eee;
+    
+    &:before {
+      content: open-quote; 
+      font-weight: bold;
+    }
+
+    .author {
+      color: $project-color;
+      text-align: right;
+    }
+  }
+
+  padding: 20px;
+  /*text-align:center;*/
+  border: 0px;
+
+  &:before {
+    content: none;
+  }
+
+  &:after {
+    content: none; 
+  }
+}
+
+
+/* Figures are displayed full-page, with the caption
+   on top of the image/video */
+figure {
+  background-color: black;
+}
+figcaption {
+  margin: 70px;
+  font-size: 50px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 40px;
+  text-align: right;
+  background-color: #F3F4F8;
+  border-top: 1px solid #CCC;
+}
+
+/* Transition effect */
+/* Feel free to change the transition effect for original
+   animations. See here:
+   https://developer.mozilla.org/en/CSS/CSS_transitions
+   How to use CSS3 Transitions: */
+section {
+  -moz-transition: left 400ms linear 0s;
+  -webkit-transition: left 400ms linear 0s;
+  -ms-transition: left 400ms linear 0s;
+  transition: left 400ms linear 0s;
+}
+.view section {
+  -moz-transition: none;
+  -webkit-transition: none;
+  -ms-transition: none;
+  transition: none;
+}
+
+.view section[aria-selected] {
+  border: 5px red solid;
+}
+
+/* Before */
+section { left: -150%; }
+/* Now */
+section[aria-selected] { left: 0; }
+/* After */
+section[aria-selected] ~ section { left: +150%; }
+
+/* Incremental elements */
+
+/* By default, visible */
+.incremental > * { opacity: 1; }
+
+/* The current item */
+.incremental > *[aria-selected] { opacity: 1; }
+
+/* The items to-be-selected */
+.incremental > *[aria-selected] ~ * { opacity: 0; }
+
+/* The progressbar, at the bottom of the slides, show the global
+   progress of the presentation. */
+#progress-bar {
+  height: 2px;
+  background: #AAA;
+}
+
+section {
+  -moz-transition: opacity 500ms ease-out 0ms;
+  -webkit-transition: opacity 500ms ease-out 0ms;
+  -ms-transition: opacity 500ms ease-out 0ms;
+  transition: opacity 500ms ease-out 0ms;
+}
