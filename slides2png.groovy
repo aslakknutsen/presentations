@@ -14,10 +14,14 @@
 
 @Grapes([
     @Grab("org.codehaus.geb:geb-core:0.7.0"),
-    @Grab("org.seleniumhq.selenium:selenium-firefox-driver:2.22.0"),
-    @Grab("org.seleniumhq.selenium:selenium-support:2.22.0")
+    //@Grab("org.seleniumhq.selenium:selenium-firefox-driver:2.32.0"), 
+    @Grab("org.seleniumhq.selenium:selenium-chrome-driver:2.32.0"),
+    @Grab("org.seleniumhq.selenium:selenium-support:2.32.0")
 ])
 import geb.Browser
+import org.openqa.selenium.Keys
+
+System.setProperty('webdriver.chrome.driver', '/home/aslak/dev/tools/chromedriver')
 
 if (args.length == 0) {
   println "Please specify the URL of the presentation"
@@ -50,7 +54,7 @@ Browser.drive {
         script.append("#!/bin/sh\n\ncd `dirname \$0`\nconvert")
       }
       script.append(' slide_' + idx + '.png')
-      body << 'j'
+      body << Keys.chord(Keys.RIGHT) 
       idx++
       sleep 500
     }
