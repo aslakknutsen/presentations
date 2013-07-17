@@ -27,12 +27,13 @@
 #
 # bundle exec awestruct -s
 
-source :rubygems
+#source :rubygems
+source 'https://rubygems.org'
 
 #gem "awestruct", :path => '../awestruct'
-gem "awestruct", "0.4.8"
+gem "awestruct", "0.5.2"
 gem "puma"
-gem "rest-client", "1.6.7"
+gem "rest-client"
 gem "hpricot"
 gem "RedCloth"
 gem "redcarpet"
@@ -45,4 +46,4 @@ gem "ri_cal", "0.8.8"
 gem "tzinfo", "0.3.33"
 gem "therubyracer"
 gem "jruby-openssl", "0.7.7", :platforms => :jruby
-gem "rb-inotify", "0.8.8", :platforms => [:ruby, :jruby]
+gem "rb-inotify"
