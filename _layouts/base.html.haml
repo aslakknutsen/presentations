@@ -9,13 +9,13 @@
     - if page.stylesheets
       - page.stylesheets.each do |stylesheet|
         %link(rel='stylesheet' href=stylesheet)
-    %script{ :type=>'text/javascript', :src=>'//cdnjs.cloudflare.com/ajax/libs/jquery/1.7.1/jquery.min.js' }
+    %script{ :type=>'text/javascript', :src=>'/javascripts/jquery.min.js' }
     - if page.top_javascripts
       - page.top_javascripts.each do |javascript|
         %script{:src=>javascript}
 
     /[if lt IE 9]
-      %script{ :type=>'text/javascript', :src=>'//html5shim.googlecode.com/svn/trunk/html5.js' }
+      %script{ :type=>'text/javascript', :src=>'/javascripts/html5.js' }
   %body.view
     ~ content
 
