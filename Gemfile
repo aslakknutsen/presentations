@@ -31,7 +31,7 @@
 source 'https://rubygems.org'
 
 #gem "awestruct", :path => '../awestruct'
-gem "awestruct", "0.5.2"
+gem "awestruct", "0.4.8"
 gem "puma"
 gem "rest-client"
 gem "hpricot"
