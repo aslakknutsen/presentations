@@ -1,1 +1,12 @@
 title: Presentations
+profiles:
+  development:
+    deploy: nil # force development as the default
+  production:
+    base_url: ''
+    fingerprint_assets: true
+    deploy:
+      host: github_pages
+      branch: gh-pages 
+      repository: origin 
+
