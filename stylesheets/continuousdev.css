@@ -1,11 +1,14 @@
+/* line 8 */
 html body {
   background-color: white;
   counter-reset: slideidx;
 }
+/* line 12 */
 html body section {
   padding-left: 10px;
   padding-right: 10px;
 }
+/* line 17 */
 html body section.core li {
   display: block;
   text-align: right;
@@ -14,26 +17,31 @@ html body section.core li {
   line-height: 30px;
 }
 
+/* line 29 */
 .code {
   width: 100%;
   height: 100%;
   display: table;
 }
 
+/* line 35 */
 .code_inner {
   vertical-align: middle;
   display: table-cell;
 }
 
+/* line 40 */
 .demo_url {
   font-size: 1.7em;
   text-decoration: underline;
   text-align: center;
 }
 
+/* line 47 */
 .title .authors {
   margin-top: 7%;
 }
+/* line 51 */
 .title img {
   position: absolute;
   left: 35%;
@@ -42,11 +50,13 @@ html body section.core li {
   height: 500px;
   width: 381px;
 }
+/* line 60 */
 .title .links {
   margin-left: 7%;
   font-size: 0.6em;
 }
 
+/* line 67 */
 .info img {
   position: absolute;
   left: 60%;
@@ -56,10 +66,12 @@ html body section.core li {
   width: 200px;
 }
 
+/* line 78 */
 .step > img {
   padding-top: 5%;
 }
 
+/* line 83 */
 ul li {
   display: inline;
   list-style: none;
@@ -68,57 +80,68 @@ ul li {
   xtext-align: right;
 }
 
+/* line 92 */
 .right {
   text-align: right;
 }
 
+/* line 96 */
 .brand {
   color: #41245a;
 }
 
+/* line 99 */
 .company_brand {
   color: red;
   font-size: 0.7em;
   padding-bottom: 5px;
 }
 
+/* line 105 */
 .personal_brand {
   font-size: 0.6em;
 }
 
+/* line 110 */
 .project {
   color: #f7490f;
   font-weight: bold;
 }
 
+/* line 116 */
 .principle h1 {
   margin-top: 30%;
   font-size: 500px;
   float: right;
 }
+/* line 121 */
 .principle h2 {
   margin-top: 30%;
   font-size: 70px;
   text-align: left;
 }
+/* line 126 */
 .principle h3 {
   margin: 5% 0px 0px 0px;
   font-size: 50px;
   text-align: right;
 }
 
+/* line 134 */
 body, .view section {
   xbackground-color: white;
   xborder-radius: 12px;
 }
 
 /* A section is a slide. It's size is 800x600, and this will never change */
+/* line 136 */
 section, .view head > title {
   /* The font from Google */
   font-family: 'Oswald', arial, serif;
   font-size: 30px;
 }
 
+/* line 142 */
 .view section:after {
   counter-increment: slideidx;
   content: counter(slideidx, decimal-leading-zero);
@@ -128,30 +151,37 @@ section, .view head > title {
   color: white;
 }
 
+/* line 149 */
 .view head > title {
   color: white;
   text-align: center;
   margin: 1em 0 1em 0;
 }
 
+/* line 155 */
 pre {
   margin-top: 20px;
 }
+/* line 158 */
 pre code {
   line-height: 10px;
   font-size: 90%;
 }
 
+/* line 164 */
 .overlay {
   margin-top: -453px;
 }
+/* line 166 */
 .overlay pre {
   border-bottom: 0px;
 }
+/* line 169 */
 .overlay code {
   xborder: 0px;
 }
 
+/* line 175 */
 embed {
   position: absolute;
   left: 35%;
@@ -162,38 +192,46 @@ embed {
   opacity: 0.3;
 }
 
+/* line 185 */
 h1, h2 {
   margin-top: 200px;
   text-align: left;
   font-size: 80px;
 }
 
+/* line 190 */
 h3 {
   margin: 50px 0 50px 50px;
 }
 
+/* line 194 */
 h4 {
   text-align: right;
   margin-top: 50px;
 }
+/* line 198 */
 h4 span {
   line-height: 50px;
 }
 
+/* line 203 */
 ul {
   margin: 50px 200px;
 }
 
+/* line 207 */
 p {
   margin: 75px;
   font-size: 50px;
 }
 
+/* line 212 */
 blockquote {
   padding: 20px;
   text-align: center;
   border: 0px;
 }
+/* line 213 */
 blockquote.quote {
   margin-top: 100px;
   margin-left: 80px;
@@ -203,32 +241,39 @@ blockquote.quote {
   color: #41245a;
   border-left: 5px solid #eee;
 }
+/* line 222 */
 blockquote.quote:before {
   content: open-quote;
   font-weight: bold;
 }
+/* line 227 */
 blockquote.quote .author {
   color: #f7490f;
   text-align: right;
 }
+/* line 237 */
 blockquote:before {
   content: none;
 }
+/* line 241 */
 blockquote:after {
   content: none;
 }
 
 /* Figures are displayed full-page, with the caption
    on top of the image/video */
+/* line 249 */
 figure {
   background-color: black;
 }
 
+/* line 252 */
 figcaption {
   margin: 70px;
   font-size: 50px;
 }
 
+/* line 257 */
 footer {
   position: absolute;
   bottom: 0;
@@ -244,6 +289,7 @@ footer {
    animations. See here:
    https://developer.mozilla.org/en/CSS/CSS_transitions
    How to use CSS3 Transitions: */
+/* line 272 */
 section {
   -moz-transition: left 400ms linear 0s;
   -webkit-transition: left 400ms linear 0s;
@@ -251,6 +297,7 @@ section {
   transition: left 400ms linear 0s;
 }
 
+/* line 278 */
 .view section {
   -moz-transition: none;
   -webkit-transition: none;
@@ -258,43 +305,51 @@ section {
   transition: none;
 }
 
+/* line 285 */
 .view section[aria-selected] {
   border: 5px red solid;
 }
 
 /* Before */
+/* line 290 */
 section {
   left: -150%;
 }
 
 /* Now */
+/* line 292 */
 section[aria-selected] {
   left: 0;
 }
 
 /* After */
+/* line 294 */
 section[aria-selected] ~ section {
   left: 150%;
 }
 
 /* Incremental elements */
 /* By default, visible */
+/* line 299 */
 .incremental > * {
   opacity: 1;
 }
 
 /* The current item */
+/* line 302 */
 .incremental > *[aria-selected] {
   opacity: 1;
 }
 
 /* The items to-be-selected */
+/* line 305 */
 .incremental > *[aria-selected] ~ * {
   opacity: 0;
 }
 
 /* The progressbar, at the bottom of the slides, show the global
    progress of the presentation. */
+/* line 309 */
 #progress-bar {
   height: 2px;
   background: #AAA;

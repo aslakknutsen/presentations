@@ -1,14 +1,18 @@
+/* line 7 */
 html {
   background-color: #ededed;
 }
+/* line 9 */
 html body {
   background-color: #ededed;
   counter-reset: slideidx;
 }
+/* line 13 */
 html body section {
   padding-left: 10px;
   padding-right: 10px;
 }
+/* line 18 */
 html body section.core li {
   display: block;
   text-align: right;
@@ -17,10 +21,12 @@ html body section.core li {
   line-height: 30px;
 }
 
+/* line 30 */
 .code pre, .code code {
   white-space: pre-wrap !important;
 }
 
+/* line 34 */
 .bug {
   position: absolute;
   display: none;
@@ -28,30 +34,36 @@ html body section.core li {
   z-index: 10;
 }
 
+/* line 41 */
 .code {
   width: 100%;
   height: 100%;
   display: table;
 }
 
+/* line 47 */
 .code_inner {
   vertical-align: middle;
   display: table-cell;
 }
 
+/* line 52 */
 .code_inner img {
   width: 24em;
   height: 14em;
 }
 
+/* line 58 */
 .step .code_inner {
   text-align: center;
 }
 
+/* line 64 */
 .step img {
   xpadding-top: 5%;
 }
 
+/* line 70 */
 ul li {
   display: inline;
   list-style: none;
@@ -60,62 +72,75 @@ ul li {
   xtext-align: right;
 }
 
+/* line 79 */
 .right {
   text-align: right;
 }
 
+/* line 83 */
 .brand {
   color: #41245a;
 }
 
+/* line 86 */
 .company_brand {
   color: red;
   font-size: 0.7em;
 }
 
+/* line 91 */
 .project {
   color: #f7490f;
   font-weight: bold;
 }
 
+/* line 97 */
 .authors h3 {
   margin: 5% 0px 0px 0px;
 }
 
+/* line 103 */
 .principle h1 {
   margin-top: 20%;
   font-size: 500px;
   float: right;
 }
+/* line 108 */
 .principle h2 {
   margin-top: 20%;
   font-size: 70px;
   text-align: left;
 }
+/* line 113 */
 .principle h3 {
   margin: 5% 0px 0px 0px;
   font-size: 50px;
   text-align: right;
 }
 
+/* line 121 */
 .full h2 {
   font-size: 4.5em;
   letter-spacing: 0.2em;
 }
 
+/* line 127 */
 .center {
   text-align: center;
 }
 
+/* line 132 */
 .related h1 {
   margin-top: 5%;
   font-size: 120%;
 }
+/* line 136 */
 .related h2 {
   margin-top: 2%;
   line-height: 0.9em;
   font-size: 2.3em;
 }
+/* line 141 */
 .related .bottom {
   font-size: 1.3em;
   line-height: 1em;
@@ -124,28 +149,34 @@ ul li {
   top: 60%;
   z-index: -1;
 }
+/* line 149 */
 .related h3 {
   margin: 20px 0 0 0;
 }
+/* line 153 */
 .related .authors {
   font-size: 0.8em;
 }
+/* line 156 */
 .related .location {
   font-size: 0.8em;
 }
 
+/* line 161 */
 body, .view section {
   xbackground-color: white;
   xborder-radius: 12px;
 }
 
 /* A section is a slide. It's size is 800x600, and this will never change */
+/* line 163 */
 section, .view head > title {
   /* The font from Google */
   font-family: 'Oswald', arial, serif;
   font-size: 30px;
 }
 
+/* line 169 */
 .view section:after {
   counter-increment: slideidx;
   content: counter(slideidx, decimal-leading-zero);
@@ -155,25 +186,30 @@ section, .view head > title {
   color: white;
 }
 
+/* line 176 */
 .view head > title {
   color: white;
   text-align: center;
   margin: 1em 0 1em 0;
 }
 
+/* line 182 */
 pre {
   margin-top: 20px;
 }
+/* line 185 */
 pre code {
   line-height: 10px;
   font-size: 90%;
 }
 
+/* line 191 */
 .overlay {
   position: absolute;
   margin-top: -465px;
   background: transparent;
 }
+/* line 195 */
 .overlay pre {
   background: transparent;
   border-bottom: 0px;
@@ -181,32 +217,38 @@ pre code {
   border-left: 0px;
   border-right: 0px;
 }
+/* line 202 */
 .overlay code {
   background: transparent;
   border: 0px;
 }
 
+/* line 209 */
 img.background {
   position: absolute;
 }
+/* line 212 */
 img.background.extendable {
   left: 30%;
   top: -30%;
   z-index: -1;
   height: 800px;
 }
+/* line 218 */
 img.background.flexible {
   left: -25%;
   top: 0%;
   z-index: -1;
   height: 600px;
 }
+/* line 225 */
 img.background.right {
   left: 35%;
   top: -30%;
   z-index: -1;
   height: 800px;
 }
+/* line 231 */
 img.background.left {
   left: -25%;
   top: 0%;
@@ -214,6 +256,7 @@ img.background.left {
   height: 600px;
 }
 
+/* line 241 */
 embed {
   position: absolute;
   left: 35%;
@@ -224,11 +267,13 @@ embed {
   opacity: 0.3;
 }
 
+/* line 251 */
 h1, h2 {
   margin-top: 20%;
   text-align: left;
   font-size: 80px;
 }
+/* line 256 */
 h1.down, h2.down {
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
@@ -236,39 +281,47 @@ h1.down, h2.down {
   -o-transform: rotate(90deg);
   transform: rotate(90deg);
 }
+/* line 263 */
 h1.down.right, h2.down.right {
   margin-left: 550px;
   margin-top: 130px;
 }
+/* line 267 */
 h1.down.left, h2.down.left {
   margin-right: 500px;
   margin-top: 200px;
 }
 
+/* line 273 */
 h3 {
   margin: 100px 0 50px 100px;
 }
 
+/* line 277 */
 h4 {
   text-align: right;
   margin-top: 50px;
   line-height: 1em;
 }
 
+/* line 282 */
 ul {
   margin: 50px 200px;
 }
 
+/* line 286 */
 p {
   margin: 75px;
   font-size: 50px;
 }
 
+/* line 291 */
 blockquote {
   padding: 20px;
   /*text-align:center;*/
   border: 0px;
 }
+/* line 292 */
 blockquote.quote {
   margin-top: 100px;
   /*margin-left: 80px;*/
@@ -278,32 +331,39 @@ blockquote.quote {
   color: #41245a;
   border-left: 5px solid #eee;
 }
+/* line 301 */
 blockquote.quote:before {
   content: open-quote;
   font-weight: bold;
 }
+/* line 306 */
 blockquote.quote .author {
   color: #f7490f;
   text-align: right;
 }
+/* line 316 */
 blockquote:before {
   content: none;
 }
+/* line 320 */
 blockquote:after {
   content: none;
 }
 
 /* Figures are displayed full-page, with the caption
    on top of the image/video */
+/* line 328 */
 figure {
   background-color: black;
 }
 
+/* line 331 */
 figcaption {
   margin: 70px;
   font-size: 50px;
 }
 
+/* line 336 */
 footer {
   position: absolute;
   bottom: 0;
@@ -319,6 +379,7 @@ footer {
    animations. See here:
    https://developer.mozilla.org/en/CSS/CSS_transitions
    How to use CSS3 Transitions: */
+/* line 351 */
 section {
   -moz-transition: left 400ms linear 0s;
   -webkit-transition: left 400ms linear 0s;
@@ -326,6 +387,7 @@ section {
   transition: left 400ms linear 0s;
 }
 
+/* line 357 */
 .view section {
   -moz-transition: none;
   -webkit-transition: none;
@@ -333,48 +395,57 @@ section {
   transition: none;
 }
 
+/* line 364 */
 .view section[aria-selected] {
   border: 5px red solid;
 }
 
 /* Before */
+/* line 369 */
 section {
   left: -150%;
 }
 
 /* Now */
+/* line 371 */
 section[aria-selected] {
   left: 0;
 }
 
 /* After */
+/* line 373 */
 section[aria-selected] ~ section {
   left: 150%;
 }
 
 /* Incremental elements */
 /* By default, visible */
+/* line 378 */
 .incremental > * {
   opacity: 1;
 }
 
 /* The current item */
+/* line 381 */
 .incremental > *[aria-selected] {
   opacity: 1;
 }
 
 /* The items to-be-selected */
+/* line 384 */
 .incremental > *[aria-selected] ~ * {
   opacity: 0;
 }
 
 /* The progressbar, at the bottom of the slides, show the global
    progress of the presentation. */
+/* line 388 */
 #progress-bar {
   height: 2px;
   background: #AAA;
 }
 
+/* line 393 */
 section {
   -moz-transition: opacity 500ms ease-out 0ms;
   -webkit-transition: opacity 500ms ease-out 0ms;
