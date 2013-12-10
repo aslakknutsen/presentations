@@ -1,0 +1,34 @@
+/*********************************************
+ * OTHER STATES
+ *********************************************/
+
+.fullscreen .state-background {
+  width: 100%;
+  height: 100%;
+}
+
+.fullscreen .reveal .slides {
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  left: 0px;
+  right: 0px;
+  top:0px;
+  bottom: 0px;
+}
+
+.fullscreen .reveal .slides > section, .fullscreen .reveal .slides > section > section {
+  position: absolute;
+  width: 90%;
+  height: 95%;
+  min-height: 95%;
+  text-align: left;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  margin:0px;
+  padding:20px;
+  padding-top: 40px;
+}

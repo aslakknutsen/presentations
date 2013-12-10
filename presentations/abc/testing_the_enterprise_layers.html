@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <meta />
+    <meta author='["aslakknutsen", "ALRubinger"]' />
+    <meta apple-mobile-web-app-capable='yes' />
+    <meta apple-mobile-web-app-status-bar-style='black-translucent' />
+    <title>Testing the Enterprise layers &#183; Presentations</title>
+    <link href='http://onslyde.com/css/reveal/reveal.css' rel='stylesheet' type='text/css' />
+    <link href='../../stylesheets/reveal-night.css' id='theme' rel='stylesheet' type='text/css' />
+    <link href='../../stylesheets/reveal-fullscreen.css' rel='stylesheet' type='text/css' />
+    <link href='http://onslyde.com/js/reveal/lib/css/zenburn.css' rel='stylesheet' type='text/css' />
+    <script type='text/javascript'>
+      //<![CDATA[
+        document.write( '<link rel="stylesheet" href="http://onslyde.com/css/reveal/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+      //]]>
+    </script>
+    <!--[if lt IE 9]>
+      <script src='http://onslyde.com/js/reveal/lib/js/html5shiv.js' type='text/javascript'></script>
+    <![endif]-->
+    <style type='text/css'>
+      /*<![CDATA[*/
+        .none {
+          display: none;
+        }
+      /*]]>*/
+    </style>
+    <link href='http://onslyde.com/css/deck.css' rel='stylesheet' type='text/css' />
+  </head>
+  <body>
+    <script type='text/javascript'>
+      //<![CDATA[
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-31854873-2']);
+        _gaq.push(['_trackPageview']);
+        
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      //]]>
+    </script>
+    <div class='hide-disagree' id='disagree'>
+      Disagree
+    </div>
+    <div class='hide-agree' id='agree'>
+      Agree
+    </div>
+    <div class='none' id='stats'>
+      <span>
+        <span id='wscount'></span>
+        WebSocket
+      </span>
+      <span>
+        <span id='pollcount'></span>
+        Polling
+      </span>
+    </div>
+    <div class='reveal'>
+      <div class='address none'>
+        <h4 style='text-transform: lowercase;'>
+          connect now
+          <span style='color:#13daec;'>
+            http://onslyde.com/go/<span id='sessionID'/>
+          </span>
+        </h4>
+      </div>
+      <style type='text/css'>
+  /*<![CDATA[*/
+    embed {
+      z-index:-10;
+      opacity:0.3;
+    }
+    
+    section .info img {
+      height: 500px;
+      width: auto;
+    }
+  /*]]>*/
+</style>
+<div class='backgrounds'>
+  <embed src='../../images/astrophysics/arquillian_icon_256px.svg' type='image/svg+xml'></embed>
+</div>
+<div class='slides'>
+  <section class='slide-group'>
+    <section class='slide'>
+      <h1>Greetings, Earthlings!</h1>
+    </section>
+  </section>
+  <section class='slide-group'>
+    <section class='slide'>
+      <h2>Testing the Enterprise layers</h2>
+      <h3>The A, B, C’s of integration testing</h3>
+      <h4>
+        <a href='http://twitter.com/aslakknutsen'>
+          @aslakknutsen
+        </a>
+      </h4>
+      <h4>
+        <a href='http://twitter.com/ALRubinger'>
+          @ALRubinger
+        </a>
+      </h4>
+    </section>
+  </section>
+  <section class='slide-group'>
+    <section class='slide'>
+      <h2 class='send'>Do you test?</h2>
+    </section>
+  </section>
+  <section class='slide-group'>
+    <section class='slide'>
+      <h2 class='send'>What type of test?</h2>
+      <ul>
+        <li>Unit?</li>
+        <li>Integration?</li>
+        <li>Functional?</li>
+      </ul>
+    </section>
+  </section>
+  <section class='slide-group'>
+    <section class='slide'>
+      <h2 class='send'>The basics</h2>
+    </section>
+    <section data-option='Basics'>
+  <h2>Test middleware</h2>
+</section>
+<section data-option='Basics'>
+  <h2>Modular, Extensible, Flexible</h2>
+</section>
+<section data-option='Basics' data-state='fullscreen' style="background-size:contain;background-repeat:no-repeat;background-image: url('../../images/lifecycle-steps/1_select_a_container.png')">
+  <div class='none'>
+    <div class='send'>1 Select a container</div>
+  </div>
+</section>
+<section data-option='Basics'>
+  <div class='zoom-on-enter'>
+    <pre><code>&lt;profile&gt;&#x000A;    &lt;id&gt;arq-jbossas-remote-7&lt;/id&gt;&#x000A;    &lt;dependencies&gt;&#x000A;        &lt;dependency&gt;&#x000A;            &lt;groupId&gt;org.jboss.as&lt;/groupId&gt;&#x000A;            &lt;artifactId&gt;jboss-as-arquillian-container-remote&lt;/artifactId&gt;&#x000A;            &lt;version&gt;${version.jbossas}&lt;/version&gt;&#x000A;        &lt;/dependency&gt;&#x000A;    &lt;/dependencies&gt;&#x000A;&lt;/profile&gt;&#x000A;</code></pre>
+  </div>
+</section>
+<section data-option='Basics' data-state='fullscreen' style="background-size:contain;background-repeat:no-repeat;background-image: url('../../images/lifecycle-steps/2_start_container_single.png')">
+  <div class='none'>
+    <div class='send'>2 Start or connect to a container</div>
+  </div>
+</section>
+<section data-option='Basics' data-state='fullscreen' style="background-size:contain;background-repeat:no-repeat;background-image: url('../../images/lifecycle-steps/3_package_test_archive.png')">
+  <div class='none'>
+    <div class='send'>3 Package test archive and deploy to container</div>
+  </div>
+</section>
+<section data-option='Basics'>
+  <h1>ShrinkWrap</h1>
+  <h3>Deployment + Resolver + Descriptors</h3>
+  <div class='none'>
+    <div class='send'>
+      For more information about ShrinkWrap and its subprojects
+      have a look at these GitHub repository:
+      <a href='https://github.com/shrinkwrap/shrinkwrap' target='_new'>Deployment</a>
+      <a href='https://github.com/shrinkwrap/resolver' target='_new'>Resolver</a>
+      <a href='https://github.com/shrinkwrap/descriptors' target='_new'>Descriptors</a>
+    </div>
+  </div>
+</section>
+<section data-option='Basics'>
+  <div class='zoom-on-enter'>
+    <pre><code class="java">ShrinkWrap.create(JavaArchive.class)&#x000A;    .addClasses(x)&#x000A;    .addPackages(x.z)&#x000A;&#x000A;ShrinkWrap.create(WebArchive.class)&#x000A;    .addAsLibraries(x)&#x000A;    .addAsWebInfResource(x)&#x000A;    .setWebXML(z)&#x000A;&#x000A;ShrinkWrap.create(EnterpriseArchive.class)&#x000A;    .addAsModules(war, jar)&#x000A;    .setApplicationXML(x)</code></pre>
+  </div>
+</section>
+<section data-option='Basics'>
+  <div class='zoom-on-enter'>
+    <pre><code class="java">Maven.resolver()&#x000A;   .loadPomFromFile("pom.xml")&#x000A;   .resolve("x:y", "x:y:1.0")&#x000A;   .withTransitivity()&#x000A;   .asFile();</code></pre>
+  </div>
+</section>
+<section data-option='Basics'>
+  <div class='zoom-on-enter'>
+    <pre><code class="java">Descriptors.create(WebAppDescriptor.class)&#x000A;  .metadataComplete(true)&#x000A;  .version("2.5")&#x000A;    .createServlet()&#x000A;      .servletName(EchoServlet.class.getSimpleName())&#x000A;        .servletClass(EchoServlet.class.getName()).up()&#x000A;    .createServletMapping()&#x000A;    .servletName(EchoServlet.class.getSimpleName())&#x000A;    .urlPattern(EchoServlet.URL_PATTERN).up()&#x000A;    .exportAsString()</code></pre>
+  </div>
+</section>
+<section data-option='Basics' data-state='fullscreen' style="background-size:contain;background-repeat:no-repeat;background-image: url('../../images/lifecycle-steps/3_package_test_archive.png')">
+  <div class='none'>
+    <div class='send'>3 Package test archive and deploy to container</div>
+  </div>
+</section>
+<section data-option='Basics' data-state='fullscreen' style="background-size:contain;background-repeat:no-repeat;background-image: url('../../images/lifecycle-steps/4_run_test_in_container.png')">
+  <div class='none'>
+    <div class='send'>4 Run test in-container</div>
+  </div>
+</section>
+<section data-option='Basics' data-state='fullscreen' style="background-size:contain;background-repeat:no-repeat;background-image: url('../../images/lifecycle-steps/5_test_result.png')">
+  <div class='none'>
+    <div class='send'>5 Capture and report test results</div>
+  </div>
+</section>
+<section data-option='Basics' data-state='fullscreen' style="background-size:contain;background-repeat:no-repeat;background-image: url('../../images/lifecycle-steps/6_disconnect_container.png')">
+  <div class='none'>
+    <div class='send'>6 Undeploy test archive and stop or disconnect from the container</div>
+  </div>
+</section>
+  </section>
+  <section class='slide-group'>
+    <section class='slide'>
+      <h3>Split layers</h3>
+      <h4>Domain / REST / UI</h4>
+    </section>
+    <section class='slide'>
+      <h3>Test doubles</h3>
+      <h4>Repository&lt;T&gt;</h4>
+    </section>
+    <section class='slide'>
+      <h3>Reusable test api</h3>
+    </section>
+    <section class='slide'>
+      <h3>Integration and functonal in one?</h3>
+    </section>
+    <section class='slide'>
+      <h3>Modular tests suite</h3>
+    </section>
+  </section>
+  <section class='slide-group'>
+    <section class='info'>
+      <h2>
+        <div class='brand'>
+          <span class='project'>@ContinuousDev</span>
+        </div>
+      </h2>
+      <h5>http://continuousdev.org</h5>
+      <img src='../../images/continuousdev/continuous_enterprise_development_in_java.jpg' />
+      <div class='none'>
+        <div class='send'>
+          <a href='http://shop.oreilly.com/product/0636920025368.do'>
+            ContinuousDev @ O'Reilly Media
+          </a>
+        </div>
+      </div>
+    </section>
+  </section>
+</div>
+      <script src='http://onslyde.com/js/reveal/lib/js/head.min.js' type='text/javascript'></script>
+      <script src='http://onslyde.com/js/reveal/reveal.min.js' type='text/javascript'></script>
+      <script type='text/javascript'>
+        //<![CDATA[
+          // Full list of configuration options available here:
+          // https://github.com/hakimel/reveal.js#configuration
+          Reveal.initialize({
+              width: '1080px',
+              height: '1920px',
+              margin: 0.1,
+              minScale: 0.2,
+              maxScale: 1.0,
+              controls: true,
+              progress: true,
+              history: true,
+          
+              transition: 'linear' || 'default', // default/cube/page/concave/zoom/linear/none
+          
+              // Optional libraries used to extend on reveal.js
+              dependencies: [
+                  { src: 'http://onslyde.com/js/reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                  { src: 'http://onslyde.com/js/reveal/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                  { src: 'http://onslyde.com/js/reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                  { src: 'http://onslyde.com/js/reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                  { src: 'http://onslyde.com/js/reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                  { src: 'http://onslyde.com/js/reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+              ]
+          });
+          Reveal.addEventListener( 'slidechanged', function( event ) {
+            // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+            var currentZoomable = event.currentSlide.querySelector('.zoom-on-enter pre');
+            if(window.zoom.zoomLevel() !== 1 && currentZoomable === null) {
+              window.zoom.out();
+            } else if(window.zoom.zoomLevel() === 1 && currentZoomable !== null) {
+              setTimeout(function() {
+                window.zoom.to({element: currentZoomable, pan: false});
+              }, 900)
+            }
+          });
+        //]]>
+      </script>
+      <!-- /%script{ :type=>'text/javascript', :src=>'../../javascripts/onslyde/onslyde-1.0.0.deck.js?v=200' } -->
+      <!-- /:javascript -->
+      <!-- /  onslyde({ -->
+      <!-- /    deck: {sessionID: 1, mode:'reveal'} -->
+      <!-- /  }); -->
+      <script src='http://code.jquery.com/jquery-1.8.3.min.js' type='text/javascript'></script>
+      <script src='http://onslyde.com/js/libs/jquery.flot.js' type='text/javascript'></script>
+      <!-- /%script{ :type=>'text/javascript', :src=>'../../javascripts/onslyde/deck.js?v=1' } -->
+    </div>
+  </body>
+</html>

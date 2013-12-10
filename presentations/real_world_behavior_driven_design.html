@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html class='aspect-16-9'>
+  <head>
+    <meta charset='utf-8' />
+    <title>Real World Bahavior Driven Design &#183; Presentations</title>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport' />
+    <link href='/stylesheets/screen.css' rel='stylesheet' type='text/css' />
+    <link href='/stylesheets/oscon_bdd.css' rel='stylesheet' />
+    <link href='/stylesheets/dzslides.css' rel='stylesheet' />
+    <script src='/javascripts/jquery.min.js' type='text/javascript'></script>
+    <!--[if lt IE 9]>
+      <script src='/javascripts/html5.js' type='text/javascript'></script>
+    <![endif]-->
+  </head>
+  <body class='view'>
+    <section>
+  <embed src='/images/astrophysics/arquillian_icon_256px.svg' type='image/svg+xml'></embed>
+  <h1 class='spaced'>
+    <div class='brand'>
+      <span class='project'>Real world</span>
+      <br>Behavior Driven Design</br>
+    </div>
+  </h1>
+  <div class='authors'>
+    <h3>
+      Aslak Knutsen
+      <small style='font-size: .6em'>@aslakknutsen</small>
+    </h3>
+    <span class='project'>Red Hat</span>
+  </div>
+</section>
+<section>
+  <h1>Requirement</h1>
+  <div role='note'>
+    (group feeling?)
+    stakeholders
+    Scary, Fuzzy word?
+    The end goal, the why(reason)
+  </div>
+</section>
+<section>
+  <h1>Story</h1>
+  <div role='note'>
+    real life
+  </div>
+</section>
+<section>
+  <h2>
+    New
+    <span class='project'>
+      <strong>Awestruct</strong>
+    </span>
+    Requirement
+  </h2>
+  <div class='incremental'>
+    <h4>
+      As a User I Should be able to
+      <br />
+      <span class='project'>Interpolate AsciiDoc</span>
+      documents
+    </h4>
+  </div>
+  <div role='note'>
+    awestruct, ruby (in the audience?),
+    user requirement,
+    interpolate?
+  </div>
+</section>
+<section>
+  <div class='code'>
+    <div class='code_inner'>
+      <pre><code>== Presentation&#x000A;&#x000A;My name is:  #{current_presenter}&#x000A;</code></pre>
+      <pre><code>&lt;h2&gt;Presentation&lt;/h2&gt;&#x000A;&lt;p&gt;&#x000A;My name is: Aslak&#x000A;&lt;/p&gt;&#x000A;</code></pre>
+    </div>
+  </div>
+</section>
+<section>
+  <h2>The Model</h2>
+  <h4>
+    <div class='incremental'>
+      <span>Handler Chain &middot;</span>
+      <span>Interpolate Handler &middot;</span>
+      <span>
+        <br />
+        AsciiDoc Handler &middot;
+      </span>
+      <span class='italic'>
+        AsciiDoc Handler Chain
+      </span>
+    </div>
+  </h4>
+  <div role='note'>
+    chain is configuration
+  </div>
+</section>
+<section>
+  <h2>
+    Unit Coverage:
+    <span class='project'>100%</span>
+  </h2>
+  <div role='note'>
+    yeay!
+  </div>
+</section>
+<section>
+  <h2 class='spaced'>
+    Can a user
+    <span class='project'>Interpolate AsciiDoc</span>
+    documents?
+  </h2>
+  <div role='note'>
+    the real requirement
+  </div>
+</section>
+<section class='principle'>
+  <h1>?</h1>
+  <div role='note'>
+    no idea, only the pieces are tested
+  </div>
+</section>
+<section>
+  <h1>
+    Keep it
+    <span class='project'>Real</span>
+  </h1>
+  <div role='note'>
+    test only your own code? integration,
+    frameworks, servers..
+    point fingers, end user only see the whole story..
+    the gap
+  </div>
+</section>
+<section>
+  <h1 class='spaced'>
+    <div class='brand'>
+      <span class='project'>Arquillian</span>
+      <br>Middleware for your tests</br>
+    </div>
+  </h1>
+</section>
+<section>
+  <h2 class='down right'>Flexible</h2>
+  <img class='flexible background' src='/images/zoo/flexible.jpg' />
+</section>
+<section>
+  <h2 class='down left'>Extensible</h2>
+  <img class='extendable background' src='/images/zoo/extendable.jpg' />
+</section>
+<section>
+  <h2>
+    <span class='project'>Test</span>
+    Extension
+  </h2>
+  <h4>SPI for test runners</h4>
+</section>
+<section>
+  <h2>
+    <span class='project'>Test</span>
+    Runners
+  </h2>
+  <h4>JUnit &middot; TestNG &middot; Spock &middot; JBehave &middot; Thucydides</h4>
+</section>
+<section>
+  <h2>
+    <span class='project'>Container</span>
+    Extension
+  </h2>
+  <h4>SPI for runtime providers</h4>
+</section>
+<section>
+  <h2>
+    <span class='project'>Container</span>
+    Adapters
+  </h2>
+  <h4>
+    JBoss AS &middot; GlassFish &middot; Jetty &middot; Tomcat
+    <br />
+    WebSphere &middot; WebLogic &middot; Spring &middot; Weld
+  </h4>
+</section>
+<section>
+  <h2>
+    <span class='project'>Container Test</span>
+    Extension
+  </h2>
+  <h4>Binds the two &rArr; In container testing</h4>
+</section>
+<section>
+  <h1>
+    The
+    <span class='project'>basic</span>
+    Test Class
+  </h1>
+</section>
+<section>
+  <div class='code'>
+    <div class='code_inner'>
+      <pre><code>                                                                                                                            .&#x000A;public class MyTestClass {&#x000A;&#x000A;&#x000A;&#x000A;&#x000A;&#x000A;&#x000A;&#x000A;&#x000A;    private MyBean bean;&#x000A;&#x000A;    @Test&#x000A;    public void shouldBeAbleTo() {&#x000A;        Assert.assertNotNull(bean);&#x000A;    }&#x000A;}&#x000A;</code></pre>
+      <div class='overlay incremental'>
+        <pre><code>@RunWith(Arquillian.class)&#x000A;&#x000A;&#x000A;    @Deployment&#x000A;    public static Archive&lt;?&gt; createDeployment() {&#x000A;        return ShrinkWrap.create(WebArchive.class)&#x000A;            .addXYZ(...);&#x000A;    }&#x000A;&#x000A;    @Inject&#x000A;</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <h2>
+    <div class='brand'>
+      Demo
+    </div>
+  </h2>
+</section>
+<section>
+  <h2>
+    <div class='brand'>
+      How does this all
+      <span class='project'>work?</span>
+    </div>
+  </h2>
+</section>
+<section>
+  <h1>Setup</h1>
+  <h4>Maven, Gradle, Ant(+Ivy)</h4>
+</section>
+<section>
+  <div class='code'>
+    <div class='code_inner'>
+      <pre><code>&lt;dependencyManagement&gt;&#x000A;    &lt;dependency&gt;&#x000A;        &lt;groupId&gt;org.jboss.arquillian&lt;/groupId&gt;&#x000A;        &lt;artifactId&gt;arquillian-bom&lt;/artifactId&gt;&#x000A;        &lt;version&gt;1.1.0.Final&lt;/version&gt;&#x000A;        &lt;scope&gt;import&lt;/scope&gt;&#x000A;        &lt;type&gt;pom&lt;/type&gt;&#x000A;    &lt;/dependency&gt;&#x000A;&lt;/dependencyManagement&gt;&#x000A;</code></pre>
+      <div class='incremental'>
+        <pre><code>&lt;dependency&gt;&#x000A;    &lt;groupId&gt;org.jboss.arquillian.junit&lt;/groupId&gt;&#x000A;    &lt;artifactId&gt;arquillian-junit-container&lt;/artifactId&gt;&#x000A;    &lt;scope&gt;test&lt;/scope&gt;&#x000A;&lt;/dependency&gt;&#x000A;</code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class='code'>
+    <div class='code_inner'>
+      <pre><code>@RunWith(Arquillian.class)&#x000A;public class MyTestClass {&#x000A;&#x000A;    @Deployment&#x000A;    public static Archive&lt;?&gt; createDeployment() {&#x000A;        return ShrinkWrap.create(WebArchive.class)&#x000A;            .addXYZ(...);&#x000A;    }&#x000A;&#x000A;    @Inject&#x000A;    private MyBean bean;&#x000A;&#x000A;    @Test&#x000A;    public void shouldBeAbleTo() {&#x000A;        Assert.assertNotNull(bean);&#x000A;    }&#x000A;}&#x000A;</code></pre>
+    </div>
+  </div>
+</section>
+<section class='step'>
+  <div class='code'>
+    <div class='code_inner'>
+      <img src='/images/lifecycle-steps/1_select_a_container.png' />
+    </div>
+  </div>
+</section>
+<section>
+  <div class='code'>
+    <div class='code_inner'>
+      <pre><code>&lt;profile&gt;&#x000A;    &lt;id&gt;arq-jbossas-remote-7&lt;/id&gt;&#x000A;    &lt;dependencies&gt;&#x000A;        &lt;dependency&gt;&#x000A;            &lt;groupId&gt;org.jboss.as&lt;/groupId&gt;&#x000A;            &lt;artifactId&gt;jboss-as-arquillian-container-remote&lt;/artifactId&gt;&#x000A;            &lt;version&gt;${version.jbossas}&lt;/version&gt;&#x000A;        &lt;/dependency&gt;&#x000A;    &lt;/dependencies&gt;&#x000A;&lt;/profile&gt;&#x000A;</code></pre>
+    </div>
+  </div>
+</section>
+<section class='step'>
+  <div class='code'>
+    <div class='code_inner'>
+      <img src='/images/lifecycle-steps/2_start_container_single.png' />
+    </div>
+  </div>
+</section>
+<section class='step'>
+  <div class='code'>
+    <div class='code_inner'>
+      <img src='/images/lifecycle-steps/3_package_test_archive.png' />
+    </div>
+  </div>
+</section>
+<section>
+  <h1>
+    <div class='brand'>
+      ShrinkWrap
+    </div>
+  </h1>
+  <h4>Deployment + Resolver + Descriptors</h4>
+</section>
+<section>
+  <div class='code'>
+    <div class='code_inner'>
+      <pre><code>ShrinkWrap.create(JavaArchive.class)&#x000A;    .addClasses(x)&#x000A;    .addPackages(x.z)&#x000A;&#x000A;ShrinkWrap.create(WebArchive.class)&#x000A;    .addAsLibraries(x)&#x000A;    .addAsWebInfResource(x)&#x000A;    .setWebXML(z)&#x000A;&#x000A;ShrinkWrap.create(EnterpriseArchive.class)&#x000A;    .addAsModules(war, jar)&#x000A;    .setApplicationXML(x)&#x000A;</code></pre>
+    </div>
+  </div>
+</section>
+<section>
+  <div class='code'>
+    <div class='code_inner'>
+      <pre><code>Maven.resolver()&#x000A;   .loadPomFromFile("pom.xml")&#x000A;   .resolve("x:y", "x:y:1.0")&#x000A;   .withTransitivity()&#x000A;   .asFile();&#x000A;</code></pre>
+    </div>
+  </div>
+</section>
+<section>
+  <div class='code'>
+    <div class='code_inner'>
+      <pre><code>Descriptors.create(WebAppDescriptor.class)&#x000A;    .metadataComplete(true)&#x000A;    .version("2.5")&#x000A;    .createServlet()&#x000A;        .servletName(EchoServlet.class.getSimpleName())&#x000A;        .servletClass(EchoServlet.class.getName()).up()&#x000A;    .createServletMapping()&#x000A;        .servletName(EchoServlet.class.getSimpleName())&#x000A;        .urlPattern(EchoServlet.URL_PATTERN).up()&#x000A;    .exportAsString()&#x000A;</code></pre>
+    </div>
+  </div>
+</section>
+<section class='step'>
+  <div class='code'>
+    <div class='code_inner'>
+      <img src='/images/lifecycle-steps/3_package_test_archive.png' />
+    </div>
+  </div>
+</section>
+<section class='step'>
+  <div class='code'>
+    <div class='code_inner'>
+      <img src='/images/lifecycle-steps/4_run_test_in_container.png' />
+    </div>
+  </div>
+</section>
+<section class='step'>
+  <div class='code'>
+    <div class='code_inner'>
+      <img src='/images/lifecycle-steps/5_test_result.png' />
+    </div>
+  </div>
+</section>
+<section>
+  <div class='code'>
+    <div class='code_inner'>
+      <img src='/images/lifecycle-steps/6_disconnect_container.png' />
+    </div>
+  </div>
+</section>
+<section>
+  <h1>
+    <div class='brand'>
+      Arquillian
+      <span class='project'>Enrichers</span>
+    </div>
+  </h1>
+  <blockquote>getting a grip</blockquote>
+</section>
+<section>
+  <h1>
+    <div class='brand'>
+      Arquillian
+      <span class='project'>Extensions</span>
+    </div>
+  </h1>
+  <blockquote>...and different interaction styles</blockquote>
+</section>
+<section class='step'>
+  <div class='code'>
+    <div class='code_inner'>
+      <img src='/images/incontainer_runmode.png' />
+    </div>
+  </div>
+</section>
+<section class='persistence'>
+  <h1>
+    <div class='brand'>
+      Arquillian
+      <span class='project'>Persistence</span>
+    </div>
+  </h1>
+  <blockquote>don't let the bugs hide in the boilerplate</blockquote>
+</section>
+<section class='step'>
+  <div class='code'>
+    <div class='code_inner'>
+      <img src='/images/client_runmode.png' />
+    </div>
+  </div>
+</section>
+<section>
+  <h1>
+    <div class='brand'>
+      Arquillian
+      <span class='project'>Drone</span>
+    </div>
+  </h1>
+  <blockquote>functional mayham</blockquote>
+</section>
+<section class='step'>
+  <div class='code'>
+    <div class='code_inner'>
+      <img src='/images/warp_runmode.png' />
+    </div>
+  </div>
+</section>
+<section>
+  <h1>
+    <div class='brand'>
+      Arquillian
+      <span class='project'>Warp</span>
+    </div>
+  </h1>
+  <blockquote>bridging both worlds</blockquote>
+</section>
+<section class='step'>
+  <div class='code'>
+    <div class='code_inner'>
+      <img src='/images/lego_car.jpg' />
+    </div>
+  </div>
+</section>
+<section class='step'>
+  <div class='code'>
+    <div class='code_inner'>
+      <img src='/images/lego_mess.jpg' />
+    </div>
+  </div>
+</section>
+<section>
+  <h2>
+    <div class='brand'>
+      Spock
+    </div>
+    <br />
+    <div class='brand'>
+      Thucydides (2 cd's)
+    </div>
+  </h2>
+  <div role='note'>
+    Spock without Arq and with..
+    Thucydides recording
+  </div>
+</section>
+<section>
+  <h2>
+    <div class='brand'>
+      Demo
+    </div>
+  </h2>
+</section>
+<section>
+  <embed src='/images/astrophysics/arquillian_icon_256px.svg' type='image/svg+xml'></embed>
+  <h3>+Arquillian</h3>
+  <h3>http://arquillian.org</h3>
+  <h3>https://github.com/arquillian</h3>
+</section>
+<section>
+  <h2>Credits</h2>
+  <ul style='margin-left: 0; line-height: 2em'>
+    <li>http://www.flickr.com/photos/horiavarlan</li>
+    <li>http://www.flickr.com/photos/heroiclife</li>
+    <li>http://www.knowyourmobile.com/blog/1689315/samsung_confirms_flexibleoled_displays_for_galaxy_range_in_2013.html</li>
+  </ul>
+</section>
+<div id='progress-bar'></div>
+<script type='text/javascript'>
+  $(window).load(function() {
+  	list = $$('pre>code')
+  	for(i = 0; i < list.length; i++) {
+  		list[i].classList.add('prettify');
+  	}
+  	prettify();
+  })
+</script>
+    <script src='/javascripts/jquery-timer.js' type='text/javascript'></script>
+    <script src='/javascripts/dzslides.js' type='text/javascript'></script>
+    <script src='/javascripts/prettify.js' type='text/javascript'></script>
+  </body>
+</html>

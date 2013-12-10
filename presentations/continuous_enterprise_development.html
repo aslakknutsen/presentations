@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html class='aspect-4-6'>
+  <head>
+    <meta charset='utf-8' />
+    <title>Today’s Rapid Java EE Development &#183; Presentations</title>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport' />
+    <link href='/stylesheets/screen.css' rel='stylesheet' type='text/css' />
+    <link href='/stylesheets/continuousdev.css' rel='stylesheet' />
+    <link href='/stylesheets/dzslides.css' rel='stylesheet' />
+    <script src='/javascripts/jquery.min.js' type='text/javascript'></script>
+    <!--[if lt IE 9]>
+      <script src='/javascripts/html5.js' type='text/javascript'></script>
+    <![endif]-->
+  </head>
+  <body class='view'>
+    <section class='title'>
+  <img src='/images/continuousdev/continuous_enterprise_development_in_java.jpg' />
+  <div class='authors'>
+    <h3>
+      Andrew Lee
+      <br />
+      Rubinger
+      <div class='company_brand'>
+        Red Hat
+      </div>
+      <div class='personal_brand'>@ALRubinger</div>
+    </h3>
+    <h3>
+      <br />
+      Aslak
+      <br />
+      Knutsen
+      <div class='company_brand'>
+        Red Hat
+      </div>
+      <div class='personal_brand'>@aslakknutsen</div>
+    </h3>
+  </div>
+  <div class='links'>
+    bit.ly/CON5312-DEMO
+    <br />
+    bit.ly/CON5312-BLOG
+  </div>
+</section>
+<section>
+  <h2>Testing is...</h2>
+  <h4>
+    <span class='incremental'>
+      <span>too hard</span>
+      <span>> too slow</span>
+      <span>> time consuming</span>
+      <span>> no fun</span>
+    </span>
+  </h4>
+</section>
+<section>
+  <blockquote class='quote'>
+    The purpose of automated testing is to enable change. Verifying correctness is just a nice side effect.
+    <div class='author'>- Jeremy Norris</div>
+  </blockquote>
+</section>
+<section>
+  <h2>
+    Testing is
+    <span class='project'>Development</span>
+  </h2>
+</section>
+<section>
+  <h2>
+    Types of
+    <span class='project'>Testing</span>
+  </h2>
+  <h4>
+    <span class='incremental'>
+      <span>acceptance</span>
+      <span>> compatibility</span>
+      <span>> functional</span>
+      <span>> black box</span>
+      <span>> white box</span>
+      <span>> gray box</span>
+      <span>> regression</span>
+      <span>> smoke</span>
+      <span>> load / stress / performance</span>
+    </span>
+  </h4>
+</section>
+<section>
+  <h1>
+    The
+    <span class='project'>Unit</span>
+  </h1>
+</section>
+<section>
+  <h1>
+    The
+    <span class='project'>Integration</span>
+  </h1>
+</section>
+<section>
+  <h1>
+    <span class='project'>Continuous</span>
+    Integration
+  </h1>
+  <h4>
+    <span class='incremental'>
+      <span>authoritative source repository</span>
+      <span>> comprehensive test suite</span>
+      <span>> automated build system</span>
+      <span>> automated deployment</span>
+    </span>
+  </h4>
+</section>
+<section>
+  <h1>
+    <span class='project'>Continuous</span>
+    Development
+  </h1>
+</section>
+<section>
+  <h1>
+    <span class='project'>Our</span>
+    Philosophy
+  </h1>
+</section>
+<section class='principle'>
+  <h1>1</h1>
+  <h2>Tests should be</h2>
+  <h3 class='project'>portable to any supported container</h3>
+</section>
+<section class='principle'>
+  <h1>2</h1>
+  <h2>Tests should be</h2>
+  <h3 class='project'>executable from both IDE and build tool</h3>
+</section>
+<section class='principle'>
+  <h1>3</h1>
+  <h2>The platform should</h2>
+  <h3 class='project'>extend/integrate existing test frameworks</h3>
+</section>
+<section>
+  <div class='code'>
+    <div class='code_inner demo_url'>
+      bit.ly/CON5312-DEMO
+    </div>
+  </div>
+</section>
+<section class='info'>
+  <img src='/images/continuousdev/continuous_enterprise_development_in_java.jpg' />
+  <h3>@ContinuousDev</h3>
+  <h3>http://continuousdev.org</h3>
+</section>
+<section class='info'>
+  <embed src='/images/astrophysics/arquillian_icon_256px.svg' type='image/svg+xml'></embed>
+  <h3>+arquillian</h3>
+  <h3>http://arquillian.org/</h3>
+  <h3>https://github.com/arquillian/</h3>
+</section>
+<div id='progress-bar'></div>
+<script type='text/javascript'>
+  $(window).load(function() {
+  	list = $$('pre>code')
+  	for(i = 0; i < list.length; i++) {
+  		list[i].classList.add('prettify');
+  	}
+  	prettify();
+  })
+</script>
+    <script src='/javascripts/dzslides.js' type='text/javascript'></script>
+    <script src='/javascripts/prettify.js' type='text/javascript'></script>
+    <script src='/javascripts/dzslides.js' type='text/javascript'></script>
+    <script src='/javascripts/prettify.js' type='text/javascript'></script>
+  </body>
+</html>

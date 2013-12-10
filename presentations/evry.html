@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html class='aspect-4-6'>
+  <head>
+    <meta charset='utf-8' />
+    <title>Arquillian &#183; Presentations</title>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport' />
+    <link href='/stylesheets/screen.css' rel='stylesheet' type='text/css' />
+    <link href='/stylesheets/astrophysics.css' rel='stylesheet' />
+    <link href='/stylesheets/dzslides.css' rel='stylesheet' />
+    <script src='/javascripts/jquery.min.js' type='text/javascript'></script>
+    <!--[if lt IE 9]>
+      <script src='/javascripts/html5.js' type='text/javascript'></script>
+    <![endif]-->
+  </head>
+  <body class='view'>
+    <section>
+  <embed src='/images/astrophysics/arquillian_icon_256px.svg' type='image/svg+xml'></embed>
+  <h1>
+    <div class='brand'>
+      <span class='project'>Arquillian</span>
+    </div>
+  </h1>
+  <blockquote>so <em>you</em> can rule your code. not the bugs!</blockquote>
+</section>
+<section>
+  <h2>Testing...</h2>
+  <h4>
+    <span class='incremental'>
+      <span>too hard</span>
+      <span>> too slow</span>
+      <span>> no time</span>
+      <span>> no fun</span>
+    </span>
+  </h4>
+</section>
+<section>
+  <blockquote class='quote'>
+    The purpose of automated testing is to enable change. Verifying correctness is just a nice side effect.
+    <div class='author'>- Jeremy Norris</div>
+  </blockquote>
+</section>
+<section>
+  <h2>
+    The Testing
+    <span class='project'>Gap</span>
+  </h2>
+  <h4>
+    <span class='incremental'>
+      <span>unit</span>
+      <span>> integration</span>
+      <span>> functional</span>
+    </span>
+  </h4>
+</section>
+<section>
+  <h1>
+    <span class='project'>Core</span>
+    Principles
+  </h1>
+</section>
+<section class='principle'>
+  <h1>1</h1>
+  <h2>Tests should be</h2>
+  <h3 class='project'>portable to any supported container</h3>
+</section>
+<section class='principle'>
+  <h1>2</h1>
+  <h2>Tests should be</h2>
+  <h3 class='project'>executable from both IDE and build tool</h3>
+</section>
+<section class='principle'>
+  <h1>3</h1>
+  <h2>The platform should</h2>
+  <h3 class='project'>extend/integrate existing test frameworks</h3>
+</section>
+<section>
+  <h1>
+    <div class='brand'>
+      Arquillian
+      <span class='project'>Core</span>
+    </div>
+  </h1>
+  <blockquote>bring your test to the runtime...</blockquote>
+</section>
+<section class='core'>
+  <ul>
+    <li>
+      <h3>Extendable</h3>
+    </li>
+    <li>
+      <h3>Flexible</h3>
+    </li>
+  </ul>
+</section>
+<section class='core'>
+  <h3>Core Extensions</h3>
+  <ul>
+    <li>Container</li>
+    <li>Test</li>
+    <li>Container Test</li>
+  </ul>
+</section>
+<section class='core'>
+  <h3>Test Extension</h3>
+  <ul>
+    <li>JUnit</li>
+    <li>TestNG</li>
+    <li>Spock</li>
+    <li>JBehave</li>
+  </ul>
+</section>
+<section class='core'>
+  <h3>Container Extension</h3>
+  <ul>
+    <li>JBoss AS</li>
+    <li>GlassFish</li>
+    <li>Jetty</li>
+    <li>Tomcat</li>
+    <li>WebSphere</li>
+    <li>WebLogic</li>
+    <li>Spring, Weld</li>
+  </ul>
+</section>
+<section class='core'>
+  <h3>Container Types</h3>
+  <ul>
+    <li>Embedded</li>
+    <li>Remote</li>
+    <li>Managed</li>
+  </ul>
+</section>
+<section>
+  <h1>Setup</h1>
+  <div class='incremental'>
+    <h3>Maven, Gradle, Ant(+Ivy)</h3>
+  </div>
+</section>
+<section>
+  <pre><code>&lt;dependencyManagement&gt;&#x000A;    &lt;dependency&gt;&#x000A;        &lt;groupId&gt;org.jboss.arquillian&lt;/groupId&gt;&#x000A;        &lt;artifactId&gt;arquillian-bom&lt;/artifactId&gt;&#x000A;        &lt;version&gt;1.1.0.Final&lt;/version&gt;&#x000A;        &lt;scope&gt;import&lt;/scope&gt;&#x000A;        &lt;type&gt;pom&lt;/type&gt;&#x000A;    &lt;/dependency&gt;&#x000A;&lt;/dependencyManagement&gt;&#x000A;</code></pre>
+  <div class='incremental'>
+    <pre><code>&lt;dependency&gt;&#x000A;    &lt;groupId&gt;org.jboss.arquillian.junit&lt;/groupId&gt;&#x000A;    &lt;artifactId&gt;arquillian-junit-container&lt;/artifactId&gt;&#x000A;    &lt;scope&gt;test&lt;/scope&gt;&#x000A;&lt;/dependency&gt;&#x000A;</code></pre>
+    <pre><code>&lt;dependency&gt;&#x000A;    &lt;groupId&gt;org.jboss.arquillian.testng&lt;/groupId&gt;&#x000A;    &lt;artifactId&gt;arquillian-testng-container&lt;/artifactId&gt;&#x000A;    &lt;scope&gt;test&lt;/scope&gt;&#x000A;&lt;/dependency&gt;&#x000A;</code></pre>
+  </div>
+</section>
+<section>
+  <h1>
+    The
+    <span class='project'>basic</span>
+    Test Class
+  </h1>
+</section>
+<section>
+  <pre><code>                                                                                                                            .&#x000A;public class MyTestClass {&#x000A;&#x000A;&#x000A;&#x000A;&#x000A;&#x000A;&#x000A;&#x000A;&#x000A;    private MyBean bean;&#x000A;&#x000A;    @Test&#x000A;    public void shouldBeAbleTo() {&#x000A;        Assert.assertNotNull(bean);&#x000A;    }&#x000A;}&#x000A;</code></pre>
+  <div class='overlay incremental'>
+    <pre><code>@RunWith(Arquillian.class)&#x000A;&#x000A;&#x000A;    @Deployment&#x000A;    public static Archive&lt;?&gt; createDeployment() {&#x000A;        return ShrinkWrap.create(WebArchive.class)&#x000A;            .addXYZ(...);&#x000A;    }&#x000A;&#x000A;    @Inject&#x000A;</code></pre>
+  </div>
+</section>
+<section>
+  <h1>
+    <div class='brand'>
+      ShrinkWrap
+    </div>
+  </h1>
+  <blockquote>for all your packaging needs</blockquote>
+</section>
+<section>
+  <pre><code>ShrinkWrap.create(JavaArchive.class)&#x000A;    .addClasses(x)&#x000A;    .addPackages(x.z)&#x000A;&#x000A;ShrinkWrap.create(WebArchive.class)&#x000A;    .addAsLibraries(x)&#x000A;    .addAsWebInfResource(x)&#x000A;    .setWebXML(z)&#x000A;&#x000A;ShrinkWrap.create(EnterpriseArchive.class)&#x000A;    .addAsModules(war, jar)&#x000A;    .setApplicationXML(x)&#x000A;</code></pre>
+</section>
+<section>
+  <h1>
+    <div class='brand'>
+      ShrinkWrap
+      <span class='project'>Resolver</span>
+    </div>
+  </h1>
+  <blockquote>using the build system</blockquote>
+</section>
+<section>
+  <pre><code>Maven.resolver()&#x000A;   .loadPomFromFile("pom.xml")&#x000A;   .resolve("x:y", "x:y:1.0")&#x000A;   .withTransitivity()&#x000A;   .asFile();&#x000A;</code></pre>
+</section>
+<section>
+  <h1>
+    <div class='brand'>
+      ShrinkWrap
+      <span class='project'>Descriptors</span>
+    </div>
+  </h1>
+</section>
+<section>
+  <pre><code>Descriptors.create(WebAppDescriptor.class)&#x000A;    .metadataComplete(true)&#x000A;    .version("2.5")&#x000A;    .createServlet()&#x000A;        .servletName(EchoServlet.class.getSimpleName())&#x000A;        .servletClass(EchoServlet.class.getName()).up()&#x000A;    .createServletMapping()&#x000A;        .servletName(EchoServlet.class.getSimpleName())&#x000A;        .urlPattern(EchoServlet.URL_PATTERN).up()&#x000A;    .exportAsString()&#x000A;</code></pre>
+</section>
+<section>
+  <pre><code>@RunWith(Arquillian.class)&#x000A;public class MyTestClass {&#x000A;&#x000A;    @Deployment&#x000A;    public static Archive&lt;?&gt; createDeployment() {&#x000A;        return ShrinkWrap.create(WebArchive.class)&#x000A;            .addXYZ(...);&#x000A;    }&#x000A;&#x000A;    @Inject&#x000A;    private MyBean bean;&#x000A;&#x000A;    @Test&#x000A;    public void shouldBeAbleTo() {&#x000A;        Assert.assertNotNull(bean);&#x000A;    }&#x000A;}&#x000A;</code></pre>
+</section>
+<section>
+  <pre><code>&lt;profile&gt;&#x000A;    &lt;id&gt;arq-jbossas-remote-7&lt;/id&gt;&#x000A;    &lt;dependencies&gt;&#x000A;        &lt;dependency&gt;&#x000A;            &lt;groupId&gt;org.jboss.as&lt;/groupId&gt;&#x000A;            &lt;artifactId&gt;jboss-as-arquillian-container-remote&lt;/artifactId&gt;&#x000A;            &lt;version&gt;${version.jbossas}&lt;/version&gt;&#x000A;        &lt;/dependency&gt;&#x000A;    &lt;/dependencies&gt;&#x000A;&lt;/profile&gt;&#x000A;</code></pre>
+</section>
+<section>
+  <h2>
+    <div class='brand'>
+      How it
+      <span class='project'>Works</span>
+    </div>
+  </h2>
+  <h4>
+    <span class='incremental'>
+      <span>start container</span>
+      <span>> package</span>
+      <span>> deploy</span>
+    </span>
+  </h4>
+  <h4>
+    <span class='incremental'>
+      <span>run tests</span>
+      <span>< return result</span>
+    </span>
+  </h4>
+  <h4>
+    <span class='incremental'>
+      <span>undeploy</span>
+      <span>< stop container</span>
+    </span>
+  </h4>
+</section>
+<section>
+  <h1>That's it?</h1>
+</section>
+<section>
+  <br />
+  <br />
+  <div class='brand'>
+    Arquillian
+    <span class='project'>Persistence</span>
+  </div>
+  <br />
+  <div class='brand'>
+    Arquillian
+    <span class='project'>Drone</span>
+  </div>
+  <br />
+  <div class='brand'>
+    Arquillian
+    <span class='project'>Warp</span>
+  </div>
+  <br />
+  <div class='brand'>
+    Arquillian
+    <span class='project'>JRebel</span>
+  </div>
+  <br />
+  <div class='brand'>
+    Arquillian
+    <span class='project'>Graphene</span>
+  </div>
+  <br />
+  <div class='brand'>
+    Arquillian
+    <span class='project'>RushEye</span>
+  </div>
+  <br />
+  <div class='brand'>
+    Arquillian
+    <span class='project'>Spring</span>
+  </div>
+  <br />
+  <div class='brand'>
+    Arquillian
+    <span class='project'>Performance</span>
+  </div>
+  <br />
+  <div class='brand'>
+    Arquillian
+    <span class='project'>Android</span>
+  </div>
+</section>
+<section>
+  <h1>... and ...</h1>
+</section>
+<section>
+  <br />
+  <br />
+  <div class='brand'>
+    Arquillian
+    <span class='project'>Byteman</span>
+  </div>
+  <br />
+  <div class='brand'>
+    Arquillian
+    <span class='project'>JSFUnit2</span>
+  </div>
+  <br />
+  <div class='brand'>
+    Arquillian
+    <span class='project'>Seam2</span>
+  </div>
+  <br />
+  <div class='brand'>
+    Arquillian
+    <span class='project'>Portal</span>
+  </div>
+  <br />
+  <div class='brand'>
+    Arquillian
+    <span class='project'>Jacoco</span>
+  </div>
+  <br />
+  <div class='brand'>
+    Arquillian
+    <span class='project'>Maven</span>
+  </div>
+  <br />
+  <div>
+    <span class='project'>Forge Plugin</span>
+    <span class='brand'>Arquillian</span>
+  </div>
+</section>
+<section>
+  <embed src='/images/astrophysics/arquillian_icon_256px.svg' type='image/svg+xml'></embed>
+  <h3>http://arquillian.org/</h3>
+  <h3>https://github.com/arquillian/</h3>
+</section>
+<div id='progress-bar'></div>
+<script type='text/javascript'>
+  $(window).load(function() {
+  	list = $$('pre>code')
+  	for(i = 0; i < list.length; i++) {
+  		list[i].classList.add('prettify');
+  	}
+  	prettify();
+  })
+</script>
+    <script src='/javascripts/dzslides.js' type='text/javascript'></script>
+    <script src='/javascripts/prettify.js' type='text/javascript'></script>
+    <script src='/javascripts/dzslides.js' type='text/javascript'></script>
+    <script src='/javascripts/prettify.js' type='text/javascript'></script>
+  </body>
+</html>

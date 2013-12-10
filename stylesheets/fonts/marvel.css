@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Marvel';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Marvel'), local('Marvel-Regular'), url(/stylesheets/fonts/qaDmg_CNIuBGdKmH4z3spA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Marvel';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Marvel Bold'), local('Marvel-Bold'), url(/stylesheets/fonts//fdSK0BiCsJzg1JgCoZQLEaCWcynf_cDxXwCLxiixG1c.ttf) format('truetype');
+}
