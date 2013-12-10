@@ -46,4 +46,4 @@ gem "ri_cal", "0.8.8"
 gem "tzinfo", "0.3.33"
 gem "therubyracer"
 gem "jruby-openssl", "0.7.7", :platforms => :jruby
-gem "rb-inotify"
+gem 'rb-inotify', '~> 0.8.8'

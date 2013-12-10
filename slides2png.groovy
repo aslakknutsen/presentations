@@ -43,7 +43,7 @@ Browser.drive {
     def idx = 1
     def body = $('body')
     body << 'f'
-    sleep 5000
+    sleep 6000
     def script = null
     def selected = null
     while (selected == null || !selected.lastElement().equals($('[aria-selected=true]').lastElement())) {

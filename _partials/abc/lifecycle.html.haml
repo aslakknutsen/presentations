@@ -1,0 +1,60 @@
+%section(data-option="#{page.option}")
+  %h2 Test middleware
+
+%section(data-option="#{page.option}")
+  %h2 Modular, Extensible, Flexible
+
+%section(data-option="#{page.option}" data-state="fullscreen" style="background-size:contain;background-repeat:no-repeat;background-image: url('../../images/lifecycle-steps/1_select_a_container.png')")
+  .none
+    .send 1 Select a container
+
+%section(data-option="#{page.option}")
+  .zoom-on-enter
+    =partial("astrophysics/setup_profiles.md")
+
+%section(data-option="#{page.option}" data-state="fullscreen" style="background-size:contain;background-repeat:no-repeat;background-image: url('../../images/lifecycle-steps/2_start_container_single.png')")
+  .none
+    .send 2 Start or connect to a container
+
+%section(data-option="#{page.option}" data-state="fullscreen" style="background-size:contain;background-repeat:no-repeat;background-image: url('../../images/lifecycle-steps/3_package_test_archive.png')")
+  .none
+    .send 3 Package test archive and deploy to container
+
+%section(data-option="#{page.option}")
+  %h1 ShrinkWrap
+  %h3 Deployment + Resolver + Descriptors
+  .none
+    .send
+      For more information about ShrinkWrap and its subprojects
+      have a look at these GitHub repository:
+      %a(href='https://github.com/shrinkwrap/shrinkwrap' target='_new') Deployment
+      %a(href='https://github.com/shrinkwrap/resolver' target='_new') Resolver
+      %a(href='https://github.com/shrinkwrap/descriptors' target='_new') Descriptors
+
+%section(data-option="#{page.option}")
+  .zoom-on-enter
+    =partial("astrophysics/shrinkwrap.html")
+
+%section(data-option="#{page.option}")
+  .zoom-on-enter
+    =partial("astrophysics/shrinkwrap_resolver.html")
+
+%section(data-option="#{page.option}")
+  .zoom-on-enter
+    =partial("astrophysics/shrinkwrap_descriptors.html")
+
+%section(data-option="#{page.option}" data-state="fullscreen" style="background-size:contain;background-repeat:no-repeat;background-image: url('../../images/lifecycle-steps/3_package_test_archive.png')")
+  .none
+    .send 3 Package test archive and deploy to container
+
+%section(data-option="#{page.option}" data-state="fullscreen" style="background-size:contain;background-repeat:no-repeat;background-image: url('../../images/lifecycle-steps/4_run_test_in_container.png')")
+  .none
+    .send 4 Run test in-container
+
+%section(data-option="#{page.option}" data-state="fullscreen" style="background-size:contain;background-repeat:no-repeat;background-image: url('../../images/lifecycle-steps/5_test_result.png')")
+  .none
+    .send 5 Capture and report test results
+
+%section(data-option="#{page.option}" data-state="fullscreen" style="background-size:contain;background-repeat:no-repeat;background-image: url('../../images/lifecycle-steps/6_disconnect_container.png')")
+  .none
+    .send 6 Undeploy test archive and stop or disconnect from the container

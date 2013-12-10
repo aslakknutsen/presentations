@@ -1,0 +1,115 @@
+!!!5
+
+%html{:class=>page.html_class}
+  %head
+    %meta{ :charset=>'utf-8' }
+    %meta{ :description=> page.description }
+    %meta{ :author=> page.author }
+    %meta{ 'apple-mobile-web-app-capable'=>'yes' }
+    %meta{ 'apple-mobile-web-app-status-bar-style'=>'black-translucent' }
+
+    %title= (page.title ? [page.title, page.site_title ? page.site_title : site.title] : [site.title, site.tagline]) * ' &#183; '
+
+    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'http://onslyde.com/css/reveal/reveal.css' }
+    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'../../stylesheets/reveal-night.css', :id=>'theme'}
+    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'../../stylesheets/reveal-fullscreen.css'}
+    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'http://onslyde.com/js/reveal/lib/css/zenburn.css' }
+    
+    :javascript
+      document.write( '<link rel="stylesheet" href="http://onslyde.com/css/reveal/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+
+    /[if lt IE 9]
+      %script{ :type=>'text/javascript', :src=>'http://onslyde.com/js/reveal/lib/js/html5shiv.js' }
+
+    :css
+      .none {
+        display: none;
+      }
+
+    %link{ :rel=>'stylesheet', :type=>'text/css', :href=>'http://onslyde.com/css/deck.css' }
+
+  %body
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-31854873-2']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+
+
+    #disagree.hide-disagree
+      Disagree
+
+    #agree.hide-agree
+      Agree
+
+    #stats.none
+      %span
+        %span(id='wscount')
+        WebSocket
+      %span
+        %span(id='pollcount')
+        Polling
+
+    .reveal
+      .address.none
+        %h4(style='text-transform: lowercase;')
+          connect now
+          %span(style='color:#13daec;')
+            http://onslyde.com/go/<span id='sessionID'/>
+
+      ~ content
+
+      %script{ :type=>'text/javascript', :src=>'http://onslyde.com/js/reveal/lib/js/head.min.js' }
+      %script{ :type=>'text/javascript', :src=>'http://onslyde.com/js/reveal/reveal.min.js' }
+
+      :javascript
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            width: '1080px',
+            height: '1920px',
+            margin: 0.1,
+            minScale: 0.2,
+            maxScale: 1.0,
+            controls: true,
+            progress: true,
+            history: true,
+
+            transition: 'linear' || 'default', // default/cube/page/concave/zoom/linear/none
+
+            // Optional libraries used to extend on reveal.js
+            dependencies: [
+                { src: 'http://onslyde.com/js/reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                { src: 'http://onslyde.com/js/reveal/plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'http://onslyde.com/js/reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'http://onslyde.com/js/reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                { src: 'http://onslyde.com/js/reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                { src: 'http://onslyde.com/js/reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+            ]
+        });
+        Reveal.addEventListener( 'slidechanged', function( event ) {
+          // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+          var currentZoomable = event.currentSlide.querySelector('.zoom-on-enter pre');
+          if(window.zoom.zoomLevel() !== 1 && currentZoomable === null) {
+            window.zoom.out();
+          } else if(window.zoom.zoomLevel() === 1 && currentZoomable !== null) {
+            setTimeout(function() {
+              window.zoom.to({element: currentZoomable, pan: false});
+            }, 900)
+          }
+        });
+
+      //%script{ :type=>'text/javascript', :src=>'../../javascripts/onslyde/onslyde-1.0.0.deck.js?v=200' }
+      //:javascript
+      //  onslyde({
+      //    deck: {sessionID: 1, mode:'reveal'}
+      //  });
+
+      %script{ :type=>'text/javascript', :src=>'http://code.jquery.com/jquery-1.8.3.min.js' }
+      %script{ :type=>'text/javascript', :src=>'http://onslyde.com/js/libs/jquery.flot.js' }
+      //%script{ :type=>'text/javascript', :src=>'../../javascripts/onslyde/deck.js?v=1' }

@@ -1,0 +1,5 @@
+<pre><code class="java">Maven.resolver()
+   .loadPomFromFile("pom.xml")
+   .resolve("x:y", "x:y:1.0")
+   .withTransitivity()
+   .asFile();</code></pre>
