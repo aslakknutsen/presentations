@@ -1,5 +1,9 @@
 ---
-layout: base
+title: Presentation Index
 ---
-
-%h1 You're awestruct.
+%ul
+  - for page in site.pages.select{|e| e.output_path =~ /.*presentation.*/ and e.title and e.location}
+    %li
+      %a(href='#{page.output_path}') #{page.title} @#{page.location}
+      %br
+      #{page.subtitle}
