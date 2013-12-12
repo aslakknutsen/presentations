@@ -3,7 +3,7 @@ profiles:
   development:
     deploy: nil # force development as the default
   production:
-    base_url: ''
+    base_url: '/presentations/'
     fingerprint_assets: true
     deploy:
       host: github_pages

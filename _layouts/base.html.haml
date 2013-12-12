@@ -8,14 +8,14 @@
     %link{ :rel=>'stylesheet', :type=>'text/css', :href=>"#{site.base_url}/stylesheets/screen.css" }
     - if page.stylesheets
       - page.stylesheets.each do |stylesheet|
-        %link(rel='stylesheet' href=stylesheet)
-    %script{ :type=>'text/javascript', :src=>'/javascripts/jquery.min.js' }
+        %link{:rel=>'stylesheet', :href=>"#{site.base_url}#{stylesheet}"}
+    %script{ :type=>'text/javascript', :src=>'#{site.base_url}/javascripts/jquery.min.js' }
     - if page.top_javascripts
       - page.top_javascripts.each do |javascript|
-        %script{:src=>javascript}
+        %script{:src=>"#{site.base_url}#{javascript}", :type=>"text/javascript"}
 
     /[if lt IE 9]
-      %script{ :type=>'text/javascript', :src=>'/javascripts/html5.js' }
+      %script{ :type=>'text/javascript', :src=>'#{site.base_url}/javascripts/html5.js' }
   %body.view
     ~ content
 
@@ -23,7 +23,7 @@
     -#%script{ :type=>'text/javascript', :src=>'/javascripts/prettify.js' }
     - if page.javascripts
       - page.javascripts.each do |javascript|
-        %script{:src=>javascript, :type=>"text/javascript"}
+        %script{:src=>"#{site.base_url}#{javascript}", :type=>"text/javascript"}
 
     -#%script{:type=>"text/javascript"}
       //$(function() { prettify(); });
