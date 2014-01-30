@@ -202,7 +202,7 @@
   <pre><code>@RunWith(Arquillian.class)&#x000A;public class MyTestClass {&#x000A;&#x000A;    @Deployment&#x000A;    public static Archive&lt;?&gt; createDeployment() {&#x000A;        return ShrinkWrap.create(WebArchive.class)&#x000A;            .addXYZ(...);&#x000A;    }&#x000A;&#x000A;    @Inject&#x000A;    private MyBean bean;&#x000A;&#x000A;    @Test&#x000A;    public void shouldBeAbleTo() {&#x000A;        Assert.assertNotNull(bean);&#x000A;    }&#x000A;}&#x000A;</code></pre>
 </section>
 <section>
-  <pre><code>&lt;profile&gt;&#x000A;    &lt;id&gt;arq-jbossas-remote-7&lt;/id&gt;&#x000A;    &lt;dependencies&gt;&#x000A;        &lt;dependency&gt;&#x000A;            &lt;groupId&gt;org.jboss.as&lt;/groupId&gt;&#x000A;            &lt;artifactId&gt;jboss-as-arquillian-container-remote&lt;/artifactId&gt;&#x000A;            &lt;version&gt;${version.jbossas}&lt;/version&gt;&#x000A;        &lt;/dependency&gt;&#x000A;    &lt;/dependencies&gt;&#x000A;&lt;/profile&gt;&#x000A;</code></pre>
+  <pre><code>&lt;profile&gt;&#x000A;  &lt;id&gt;arq-jbossas-remote-7&lt;/id&gt;&#x000A;  &lt;dependencies&gt;&#x000A;    &lt;dependency&gt;&#x000A;      &lt;groupId&gt;org.jboss.as&lt;/groupId&gt;&#x000A;      &lt;artifactId&gt;jboss-as-arquillian-container-remote&lt;/artifactId&gt;&#x000A;      &lt;version&gt;${version.jbossas}&lt;/version&gt;&#x000A;    &lt;/dependency&gt;&#x000A;  &lt;/dependencies&gt;&#x000A;&lt;/profile&gt;&#x000A;</code></pre>
 </section>
 <section>
   <h2>
