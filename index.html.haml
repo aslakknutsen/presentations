@@ -2,8 +2,9 @@
 title: Presentation Index
 ---
 %ul
-  - for page in site.pages.select{|e| e.output_path =~ /.*presentation.*/ and e.title and e.location}
+  - for page in site.pages.select{|e| e.output_path =~ /.*presentation.*/ and e.title and e.location}.sort{|a, b| a.location.reverse <=> b.location.reverse}.reverse
     %li
       %a{:href=>"#{site.base_url}#{page.output_path}"} #{page.title} @#{page.location}
       %br
       #{page.subtitle}
+  }
