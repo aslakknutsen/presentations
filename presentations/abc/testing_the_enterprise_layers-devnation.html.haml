@@ -1,0 +1,82 @@
+---
+title: Testing the Enterprise layers
+subtitle: The A, B, C’s of integration testing
+location: DevNation 2014
+author: [aslakknutsen]
+layout: onslyde
+---
+:css
+  embed {
+    z-index:-10;
+    opacity:0.3;
+  }
+
+  section .info img {
+    height: 500px;
+    width: auto;
+  }
+
+  .brand {
+    color: #41245A;
+  }
+  .project {
+    color: #F7490F;
+  }
+
+.backgrounds
+  %embed{:src=>"#{site.base_url}/images/astrophysics/arquillian_icon_256px.svg", :type=>"image/svg+xml"}
+
+.slides
+
+  %section.slide-group
+    %section.slide
+      %h1 Greetings, Earthlings!
+
+  %section.slide-group
+    %section.slide
+      %h2=page.title
+      %h3=page.subtitle
+      - for author in page.author
+        %h4
+          %a(href="http://twitter.com/#{author}")
+            ='@' + author
+
+  %section.slide-group
+    %section.slide
+      %h2.send Do you test?
+
+  %section.slide-group
+    %section.slide
+      %h2.send What type of test?
+
+      %ul
+        %li Unit?
+        %li Integration?
+        %li Functional?
+
+  %section.slide-group
+    %section.slide
+      %h2.send The basics
+
+    =partial('abc/lifecycle.html.haml', {:option => 'Basics'})
+
+  %section.slide-group
+    %section.info
+      %h2
+        .brand
+          %span.project @ContinuousDev
+      %h5 http://continuousdev.org
+      %img{:src=>"#{site.base_url}/images/continuousdev/continuous_enterprise_development_in_java.jpg"}
+
+      .none
+        .send
+          %a(href="http://shop.oreilly.com/product/0636920025368.do")
+            ContinuousDev @ O'Reilly Media
+
+  %section.slide-group
+    %section.slide
+
+    %h2 +arquillian
+    %h2 @arquillian_org
+    %h2 http://arquillian.org/
+    %h3 https://github.com/arquillian/
