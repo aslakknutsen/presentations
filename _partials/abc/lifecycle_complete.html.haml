@@ -1,0 +1,147 @@
+%section(data-option="#{page.option}")
+  %h1
+    Arquillian
+    %span.project Core
+  %h3 so you can rule the code, not the bugs!
+
+%section(data-option="#{page.option}")
+  %h1 Testing platform
+  %h3 Middleware for your tests
+
+%section(data-option="#{page.option}")
+  %h2 Modular, Extensible, Flexible
+
+
+%section(data-option="#{page.option}")
+  %h1
+    %span.project Test
+    Extension
+  %h3 SPI for test runners
+
+%section(data-option="#{page.option}")
+  %h1
+    %span.project Test
+    Runners
+  %h4 JUnit &middot; TestNG &middot; Spock &middot; JBehave &middot; Cucumber &middot; Thucydides
+
+%section(data-option="#{page.option}")
+  %h1
+    %span.project Container
+    Extension
+  %h3 SPI for runtime providers
+
+%section(data-option="#{page.option}")
+  %h1
+    %span.project Container
+    Adapters
+  %h4 WildFly &middot; JBoss AS &middot; GlassFish &middot; TomEE &middot; Jetty &middot; Tomcat &middot; WebSphere &middot; WebLogic &middot; Spring &middot; Weld
+
+%section(data-option="#{page.option}")
+  %h1
+    %span.project Container Test
+    Extension
+  %h3 Binds the two &rArr; In container testing
+
+%section(data-option="#{page.option}")
+  %h1
+    The
+    %span.project basic
+    Test Class
+
+%section(data-option="#{page.option}")
+  .zoom-on-enter
+    =partial("astrophysics/basic_junit_test_class.md")
+
+%section(data-option="#{page.option}")
+  .zoom-on-enter
+    =partial("astrophysics/arq_basic_junit_test_class_full.md")
+
+%section(data-option="#{page.option}")
+  %h1
+    Demo
+
+%section(data-option="#{page.option}")
+  %h2
+    How does this all
+    %span.project work?
+
+%section(data-option="#{page.option}")
+  %h1 Setup
+
+  %h4 Maven, Gradle, Ant(+Ivy)
+
+%section(data-option="#{page.option}")
+  .zoom-on-enter
+    =partial("astrophysics/arq_core_depmgm.md")
+
+    .fragment
+      =partial("astrophysics/arq_junit_dep.md")
+
+
+%section(data-option="#{page.option}")
+  .zoom-on-enter
+    =partial("astrophysics/arq_basic_junit_test_class_full.md")
+
+%section(data-option="#{page.option}" data-state="fullscreen" style="background-size:contain;background-repeat:no-repeat;background-image: url('../../images/lifecycle-steps/1_select_a_container.png')")
+  .none
+    .send 1 Select a container
+
+%section(data-option="#{page.option}")
+  .zoom-on-enter
+    =partial("astrophysics/setup_profiles.md")
+
+%section(data-option="#{page.option}" data-state="fullscreen" style="background-size:contain;background-repeat:no-repeat;background-image: url('../../images/lifecycle-steps/2_start_container_single.png')")
+  .none
+    .send 2 Start or connect to a container
+
+%section(data-option="#{page.option}" data-state="fullscreen" style="background-size:contain;background-repeat:no-repeat;background-image: url('../../images/lifecycle-steps/3_package_test_archive.png')")
+  .none
+    .send 3 Package test archive and deploy to container
+
+%section(data-option="#{page.option}")
+  %h1 ShrinkWrap
+  %h3 Deployment + Resolver + Descriptors
+  .none
+    .send
+      For more information about ShrinkWrap and its subprojects
+      have a look at these GitHub repository:
+      %a(href='https://github.com/shrinkwrap/shrinkwrap' target='_new') Deployment
+      %a(href='https://github.com/shrinkwrap/resolver' target='_new') Resolver
+      %a(href='https://github.com/shrinkwrap/descriptors' target='_new') Descriptors
+
+%section(data-option="#{page.option}")
+  .zoom-on-enter
+    =partial("astrophysics/shrinkwrap.html")
+
+%section(data-option="#{page.option}")
+  .zoom-on-enter
+    =partial("astrophysics/shrinkwrap_resolver.html")
+
+%section(data-option="#{page.option}")
+  .zoom-on-enter
+    =partial("astrophysics/shrinkwrap_descriptors.html")
+
+%section(data-option="#{page.option}" data-state="fullscreen" style="background-size:contain;background-repeat:no-repeat;background-image: url('../../images/lifecycle-steps/3_package_test_archive.png')")
+  .none
+    .send 3 Package test archive and deploy to container
+
+%section(data-option="#{page.option}" data-state="fullscreen" style="background-size:contain;background-repeat:no-repeat;background-image: url('../../images/lifecycle-steps/4_run_test_in_container.png')")
+  .none
+    .send 4 Run test in-container
+
+%section(data-option="#{page.option}" data-state="fullscreen" style="background-size:contain;background-repeat:no-repeat;background-image: url('../../images/lifecycle-steps/5_test_result.png')")
+  .none
+    .send 5 Capture and report test results
+
+%section(data-option="#{page.option}" data-state="fullscreen" style="background-size:contain;background-repeat:no-repeat;background-image: url('../../images/lifecycle-steps/6_disconnect_container.png')")
+  .none
+    .send 6 Undeploy test archive and stop or disconnect from the container
+
+%section(data-option="#{page.option}")
+  %h1 Run modes
+
+%section(data-option="#{page.option}" data-state="fullscreen" style="background-size:contain;background-repeat:no-repeat;background-image: url('../../images/incontainer_runmode.png')")
+
+%section(data-option="#{page.option}" data-state="fullscreen" style="background-size:contain;background-repeat:no-repeat;background-image: url('../../images/client_runmode.png')")
+
+%section(data-option="#{page.option}" data-state="fullscreen" style="background-size:contain;background-repeat:no-repeat;background-image: url('../../images/warp_runmode.png')")
