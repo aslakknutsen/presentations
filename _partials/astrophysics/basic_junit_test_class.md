@@ -1,4 +1,4 @@
-                                                                                                                                .
+	&nbsp;
     public class MyTestClass {
 
         
@@ -8,7 +8,7 @@
         
 
         
-        private MyBean bean;
+        private MyBean bean = new MyBeanStub();
 
         @Test
         public void shouldBeAbleTo() {
