@@ -335,7 +335,7 @@
             if (link.hasAttribute('href') &&
               //'#' in the href tells us that this page is already loaded in the dom - and
               // that it links to a mobile transition/page
-              !(/[\#]/g).test(link.href)) { //alert((classname === undefined && link.className === '') + '---' + classname + '---- ' + link.className);
+              !(/[#]/g).test(link.href)) { //alert((classname === undefined && link.className === '') + '---' + classname + '---- ' + link.className);
               //check for an explicit class name setting to filter this link
               if (classname !== undefined) {
                 if (link.className.indexOf(classname) >= 0) {

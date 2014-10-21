@@ -78,6 +78,13 @@
       height: 500px;
       width: auto;
     }
+    
+    .brand {
+      color: #41245A;
+    }
+    .project {
+      color: #F7490F;
+    }
   /*]]>*/
 </style>
 <div class='backgrounds'>
@@ -115,15 +122,118 @@
       </ul>
     </section>
   </section>
+  <section class='principle'>
+    <h1>1</h1>
+    <h2>Tests should be</h2>
+    <h3 class='project'>portable to any supported container</h3>
+  </section>
+  <section class='principle'>
+    <h1>2</h1>
+    <h2>Tests should be</h2>
+    <h3 class='project'>executable from both IDE and build tool</h3>
+  </section>
+  <section class='principle'>
+    <h1>3</h1>
+    <h2>The platform should</h2>
+    <h3 class='project'>extend/integrate existing test frameworks</h3>
+  </section>
   <section class='slide-group'>
     <section class='slide'>
       <h2 class='send'>The basics</h2>
     </section>
     <section data-option='Basics'>
-  <h2>Test middleware</h2>
+  <h1>
+    Arquillian
+    <span class='project'>Core</span>
+  </h1>
+  <h3>so you can rule the code, not the bugs!</h3>
+</section>
+<section data-option='Basics'>
+  <h1>Testing platform</h1>
+  <h3>Middleware for your tests</h3>
 </section>
 <section data-option='Basics'>
   <h2>Modular, Extensible, Flexible</h2>
+</section>
+<section data-option='Basics'>
+  <h1>
+    <span class='project'>Test</span>
+    Extension
+  </h1>
+  <h3>SPI for test runners</h3>
+</section>
+<section data-option='Basics'>
+  <h1>
+    <span class='project'>Test</span>
+    Runners
+  </h1>
+  <h4>JUnit &middot; TestNG &middot; Spock &middot; JBehave &middot; Cucumber &middot; Thucydides</h4>
+</section>
+<section data-option='Basics'>
+  <h1>
+    <span class='project'>Container</span>
+    Extension
+  </h1>
+  <h3>SPI for runtime providers</h3>
+</section>
+<section data-option='Basics'>
+  <h1>
+    <span class='project'>Container</span>
+    Adapters
+  </h1>
+  <h4>WildFly &middot; JBoss AS &middot; GlassFish &middot; TomEE &middot; Jetty &middot; Tomcat &middot; WebSphere &middot; WebLogic &middot; Spring &middot; Weld</h4>
+</section>
+<section data-option='Basics'>
+  <h1>
+    <span class='project'>Container Test</span>
+    Extension
+  </h1>
+  <h3>Binds the two &rArr; In container testing</h3>
+</section>
+<section data-option='Basics'>
+  <h1>
+    The
+    <span class='project'>basic</span>
+    Test Class
+  </h1>
+</section>
+<section data-option='Basics'>
+  <div class='zoom-on-enter'>
+    <pre><code>&amp;nbsp;&#x000A;public class MyTestClass {&#x000A;&#x000A;&#x000A;&#x000A;&#x000A;&#x000A;&#x000A;&#x000A;&#x000A;    private MyBean bean = new MyBeanStub();&#x000A;&#x000A;    @Test&#x000A;    public void shouldBeAbleTo() {&#x000A;        Assert.assertNotNull(bean);&#x000A;    }&#x000A;}&#x000A;</code></pre>
+  </div>
+</section>
+<section data-option='Basics'>
+  <div class='zoom-on-enter'>
+    <pre><code>@RunWith(Arquillian.class)&#x000A;public class MyTestClass {&#x000A;&#x000A;    @Deployment&#x000A;    public static Archive&lt;?&gt; createDeployment() {&#x000A;        return ShrinkWrap.create(WebArchive.class)&#x000A;            .addXYZ(...);&#x000A;    }&#x000A;&#x000A;    @Inject&#x000A;    private MyBean bean;&#x000A;&#x000A;    @Test&#x000A;    public void shouldBeAbleTo() {&#x000A;        Assert.assertNotNull(bean);&#x000A;    }&#x000A;}&#x000A;</code></pre>
+  </div>
+</section>
+<section data-option='Basics'>
+  <h1>
+    Demo
+  </h1>
+</section>
+<section data-option='Basics'>
+  <h2>
+    How does this all
+    <span class='project'>work?</span>
+  </h2>
+</section>
+<section data-option='Basics'>
+  <h1>Setup</h1>
+  <h4>Maven, Gradle, Ant(+Ivy)</h4>
+</section>
+<section data-option='Basics'>
+  <div class='zoom-on-enter'>
+    <pre><code>&lt;dependencyManagement&gt;&#x000A;    &lt;dependency&gt;&#x000A;        &lt;groupId&gt;org.jboss.arquillian&lt;/groupId&gt;&#x000A;        &lt;artifactId&gt;arquillian-bom&lt;/artifactId&gt;&#x000A;        &lt;version&gt;1.1.5.Final&lt;/version&gt;&#x000A;        &lt;scope&gt;import&lt;/scope&gt;&#x000A;        &lt;type&gt;pom&lt;/type&gt;&#x000A;    &lt;/dependency&gt;&#x000A;&lt;/dependencyManagement&gt;&#x000A;</code></pre>
+    <div class='fragment'>
+      <pre><code>&lt;dependency&gt;&#x000A;    &lt;groupId&gt;org.jboss.arquillian.junit&lt;/groupId&gt;&#x000A;    &lt;artifactId&gt;arquillian-junit-container&lt;/artifactId&gt;&#x000A;    &lt;scope&gt;test&lt;/scope&gt;&#x000A;&lt;/dependency&gt;&#x000A;</code></pre>
+    </div>
+  </div>
+</section>
+<section data-option='Basics'>
+  <div class='zoom-on-enter'>
+    <pre><code>@RunWith(Arquillian.class)&#x000A;public class MyTestClass {&#x000A;&#x000A;    @Deployment&#x000A;    public static Archive&lt;?&gt; createDeployment() {&#x000A;        return ShrinkWrap.create(WebArchive.class)&#x000A;            .addXYZ(...);&#x000A;    }&#x000A;&#x000A;    @Inject&#x000A;    private MyBean bean;&#x000A;&#x000A;    @Test&#x000A;    public void shouldBeAbleTo() {&#x000A;        Assert.assertNotNull(bean);&#x000A;    }&#x000A;}&#x000A;</code></pre>
+  </div>
 </section>
 <section data-option='Basics' data-state='fullscreen' style="background-size:contain;background-repeat:no-repeat;background-image: url('../../images/lifecycle-steps/1_select_a_container.png')">
   <div class='none'>
@@ -193,25 +303,12 @@
     <div class='send'>6 Undeploy test archive and stop or disconnect from the container</div>
   </div>
 </section>
-  </section>
-  <section class='slide-group'>
-    <section class='slide'>
-      <h3>Split layers</h3>
-      <h4>Domain / REST / UI</h4>
-    </section>
-    <section class='slide'>
-      <h3>Test doubles</h3>
-      <h4>Repository&lt;T&gt;</h4>
-    </section>
-    <section class='slide'>
-      <h3>Reusable test api</h3>
-    </section>
-    <section class='slide'>
-      <h3>Integration and functonal in one?</h3>
-    </section>
-    <section class='slide'>
-      <h3>Modular tests suite</h3>
-    </section>
+<section data-option='Basics'>
+  <h1>Run modes</h1>
+</section>
+<section data-option='Basics' data-state='fullscreen' style="background-size:contain;background-repeat:no-repeat;background-image: url('../../images/incontainer_runmode.png')"></section>
+<section data-option='Basics' data-state='fullscreen' style="background-size:contain;background-repeat:no-repeat;background-image: url('../../images/client_runmode.png')"></section>
+<section data-option='Basics' data-state='fullscreen' style="background-size:contain;background-repeat:no-repeat;background-image: url('../../images/warp_runmode.png')"></section>
   </section>
   <section class='slide-group'>
     <section class='info'>
@@ -230,6 +327,13 @@
         </div>
       </div>
     </section>
+  </section>
+  <section class='slide-group'>
+    <section class='slide'></section>
+    <h2>+arquillian</h2>
+    <h2>@arquillian_org</h2>
+    <h2>http://arquillian.org/</h2>
+    <h3>https://github.com/arquillian/</h3>
   </section>
 </div>
       <script src='http://onslyde.com/js/reveal/lib/js/head.min.js' type='text/javascript'></script>

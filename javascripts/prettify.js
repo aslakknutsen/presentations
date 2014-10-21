@@ -206,7 +206,7 @@ window['PR_SHOULD_USE_CONTINUATION'] = true;
  * @private
  * @const
  */
-var REGEXP_PRECEDER_PATTERN = '(?:^^\\.?|[+-]|[!=]=?=?|\\#|%=?|&&?=?|\\(|\\*=?|[+\\-]=|->|\\/=?|::?|<<?=?|>>?>?=?|,|;|\\?|@|\\[|~|{|\\^\\^?=?|\\|\\|?=?|break|case|continue|delete|do|else|finally|instanceof|return|throw|try|typeof)\\s*';
+var REGEXP_PRECEDER_PATTERN = '(?:^^\\.?|[+-]|[!=]=?=?|\#|%=?|&&?=?|\\(|\\*=?|[+\\-]=|->|\\/=?|::?|<<?=?|>>?>?=?|,|;|\\?|@|\\[|~|{|\\^\\^?=?|\\|\\|?=?|break|case|continue|delete|do|else|finally|instanceof|return|throw|try|typeof)\\s*';
 
 // CAVEAT: this does not properly handle the case where a regular
 // expression immediately follows another since a regular expression may
@@ -895,7 +895,7 @@ var REGEXP_PRECEDER_PATTERN = '(?:^^\\.?|[+-]|[!=]=?=?|\\#|%=?|&&?=?|\\(|\\*=?|[
          null, '0123456789'],
         // Don't treat escaped quotes in bash as starting strings.  See issue 144.
         [PR_PLAIN,       /^\\[\s\S]?/, null],
-        [PR_PUNCTUATION, /^.[^\s\w\.$@\'\"\`\/\#\\]*/, null]);
+        [PR_PUNCTUATION, /^.[^\s\w\.$@\'\"\`\/#\\]*/, null]);
 
     return createSimpleLexer(shortcutStylePatterns, fallthroughStylePatterns);
   }
